@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Splash</name>
+    <events>
+        <include>GameSystems</include>
+        <event-block sid="6383418454971853">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4113567555222386" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5135203146238541" type="System">
+                    <param id="0" name="Variable">LOADING_COMPLETE</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="2237375092619389" type="System">
+                    <param id="0" name="Variable">FADE</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6240443628746576" type="System">
+                    <param id="0" name="Variable">MENU</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="2999358648607841" type="System">
+                    <param id="0" name="Layer">&quot;menu&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4682335030730611" type="System">
+                    <param id="0" name="Variable">MUSIC_NAME</param>
+                    <param id="1" name="Value">&quot;title&quot;</param>
+                </action>
+                <action id="6" name="Stop" sid="3548657754622991" type="g_audio">
+                    <param id="0" name="Tag">&quot;music_intro&quot;</param>
+                </action>
+                <action id="6" name="Stop" sid="1761115366307687" type="g_audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="8453350966823776" type="g_audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;mus_&quot; &amp; MUSIC_NAME &amp; &quot;_intro&quot;</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;music_intro&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="4639927077287315" type="System">
+                    <param id="0" name="Variable">MUSIC_VOLUME</param>
+                    <param id="1" name="Value">min(100, OPTION_MUSIC_VOLUME)</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="2842850027193171" type="UI_0">
+                    <param id="0" name="Layer">&quot;menu&quot;</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="5235332150468188" type="UI_1">
+                    <param id="0" name="Layer">&quot;menu&quot;</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="1590029054910019" type="UI_2">
+                    <param id="0" name="Layer">&quot;menu&quot;</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="2952918717312388" type="UI_3">
+                    <param id="0" name="Layer">&quot;menu&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3584809287531459" type="UI_0">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5500966223947979" type="UI_1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9492155238456076" type="UI_2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9876258079242568" type="UI_3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" sid="571281095615175" type="UI_3">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="1040168352447531" type="ui_cursor">
+                    <param id="0" name="Instance variable">ui_id</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="8081265413947505" type="ui_cursor">
+                    <param id="0" name="Instance variable">ui_index0</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="5884240322087859" type="ui_cursor">
+                    <param id="0" name="Instance variable">ui_index1</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="4228561621047546" type="ui_cursor">
+                    <param id="0" name="Instance variable">ui_target</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="9856025090289793" type="ui_cursor">
+                    <param id="0" name="Layer">&quot;menu&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="1768474570328446" type="ui_cursor">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-26" name="Move to layer" sid="4326516408968849" type="ui_font1">
+                    <param id="0" name="Layer">&quot;font&quot;</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="2645904353686219" type="ui_font1">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4411031942221226" type="ui_font1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="5214741013316965" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_var</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="8745567094577003" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_fade</param>
+                    <param id="1" name="Value">-0.1</param>
+                </action>
+                <action id="-3" name="Set position" sid="4534240087625801" type="ui_font1">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">ViewportBottom(&quot;font&quot;)/2.5 + 4*ui_font1.ui_id</param>
+                </action>
+                <action id="0" name="Set text" sid="3458748584729967" type="ui_font1">
+                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="8747965431058438">
+                    <conditions>
+                        <condition id="4" name="Has gamepads" sid="8542258613202652" type="g_con_gpad" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2185946582999899" type="System">
+                            <param id="0" name="Variable">CONTROL_TYPE</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="534532587459851">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6059281777607467" type="ui_font1">
+                            <param id="0" name="Instance variable">ui_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="3470567091973602" type="ui_font1">
+                            <param id="0" name="Text">lowercase(ui_font1.Text)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2363498942006012">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="3083216524032986" type="ui_title">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="8463856616416227" type="ui_title">
+                            <param id="0" name="X">ViewportRight(&quot;bg&quot;)/2</param>
+                            <param id="1" name="Y">ViewportBottom(&quot;bg&quot;)/3 + 16</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="5811606614418449" type="ui_title">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7915346473572288">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7685237892342143" type="ui_keyboard">
+                            <param id="0" name="Instance variable">ui_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="7757082837415881" type="ui_keyboard">
+                            <param id="0" name="Opacity">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="1538860089002332" type="ui_keyboard">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="402577386915636" type="ui_keyboard">
+                            <param id="0" name="Layer">&quot;font&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="8872764871793726" type="ui_keyboard">
+                            <param id="0" name="X">ViewportRight(&quot;font&quot;)/2</param>
+                            <param id="1" name="Y">ViewportBottom(&quot;font&quot;)/1.75</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4241542450728049">
+            <conditions>
+                <condition id="5" name="Is tag playing" sid="2535246453465097" type="g_audio">
+                    <param id="0" name="Tag">&quot;music_intro&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="5186923759874187" type="System">
+                    <param id="0" name="Variable">FADE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="7462556707680686" title="Splash Font Fade">
+            <sub-events>
+                <event-block sid="3978604362516618">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="7684748456822303" type="System">
+                            <param id="0" name="Object">ui_font1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="9486548790926801" type="ui_font1">
+                            <param id="0" name="Opacity">lerp(0, 100 - 75*ui_font1.ui_id, ui_font1.ui_fade)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4419962772505713">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6886923491256667" type="ui_font1">
+                                    <param id="0" name="Instance variable">ui_id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="2050504686243807" type="ui_font1">
+                                    <param id="0" name="X">ui_font1.X + 8*dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4623456087222894">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="316512150012071" type="ui_font1">
+                                    <param id="0" name="Instance variable">ui_id</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="7354352951004889" type="ui_font1">
+                                    <param id="0" name="X">ui_font1.X - 8*dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8276231993021657">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9107122828750505" type="System">
+                            <param id="0" name="Variable">FADE</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4938806749314791">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2573098455409228" type="System">
+                                    <param id="0" name="First value">ui_font1.ui_var%2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7683448357702199" type="ui_font1">
+                                    <param id="0" name="Instance variable">ui_fade</param>
+                                    <param id="1" name="Value">ui_font1.ui_fade + 0.5*dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4773771395971701">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3082997794490556" type="ui_font1">
+                                            <param id="0" name="Instance variable">ui_fade</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">1.5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="9493809602040067" type="ui_font1">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="7875887386953093">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="508753875623598" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4576163061984542" type="ui_font1">
+                                    <param id="0" name="Instance variable">ui_fade</param>
+                                    <param id="1" name="Value">ui_font1.ui_fade - 0.5*dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="5981922818279895">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2183127865255113" type="ui_font1">
+                                            <param id="0" name="Instance variable">ui_fade</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">-0.5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="6954933986580537" type="ui_font1">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="7484882992411661" type="ui_font1">
+                                            <param id="0" name="X">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>BLUE KEY GAMES PRESENTS</comment>
+        <event-block sid="9707740678124097">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="2133223575046724" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_var</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="9268572085798387" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6757039271444426" type="ui_font1">
+                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Make sure to set the second text object to the Taiscrethean script.</comment>
+                <event-block sid="9496344582594727">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3093898492308467" type="ui_font1">
+                            <param id="0" name="Instance variable">ui_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="783334605603453" type="ui_font1">
+                            <param id="0" name="Text">lowercase(ui_font1.Text) &amp; &quot;_&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2318318997879323" type="ui_font1">
+                            <param id="0" name="Text">replace(ui_font1.Text, &quot; &quot;, &quot;_&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>A GODSTONE TALE</comment>
+        <event-block sid="300548083262982">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="2704995707803729" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_var</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="5640381350498085" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="4837180345876354" type="ui_font1">
+                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 1)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Make sure to set the second text object to the Taiscrethean script.</comment>
+                <event-block sid="8558127702586863">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7716088957653062" type="ui_font1">
+                            <param id="0" name="Instance variable">ui_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="232951060231767" type="ui_font1">
+                            <param id="0" name="Text">lowercase(ui_font1.Text) &amp; &quot;_&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6253764891158305" type="ui_font1">
+                            <param id="0" name="Text">replace(ui_font1.Text, &quot; &quot;, &quot;_&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>REVAHLEN</comment>
+        <event-block sid="5346215988486393">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="1629224232478983" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_var</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="5331788401932463" type="ui_font1">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3435901927051445">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="3123345394941399" type="ui_title">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="7787737575676695" type="ui_title">
+                            <param id="0" name="Opacity">ui_title.Opacity + 50*dt</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2972283081181501" type="ui_title">
+                            <param id="0" name="X">ViewportRight(&quot;bg&quot;)/2</param>
+                            <param id="1" name="Y">max(ui_title.Y - 8*dt, ViewportBottom(&quot;bg&quot;)/3)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5123719967437718">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6826428473804023" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_var</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7241332885480668" type="ui_font1">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="412819975935955">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2466401432031055" type="ui_keyboard">
+                            <param id="0" name="Instance variable">ui_id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="260185191992941" type="ui_keyboard">
+                            <param id="0" name="Opacity">ui_keyboard.Opacity + 100*dt</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9521624016311321">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="30090385580526" type="System">
+                                    <param id="0" name="Variable">CONTROL_TYPE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="3009042652578006" type="ui_keyboard">
+                                    <param id="0" name="Animation">&quot;key_&quot; &amp; g_gamedata.At(0,0,14)</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="419470780800669">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7304846835358309" type="System">
+                                    <param id="0" name="Variable">CONTROL_TYPE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="8381897156228369" type="ui_keyboard">
+                                    <param id="0" name="Animation">&quot;x360&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="499902582932576" type="ui_keyboard">
+                                    <param id="0" name="Frame number">7</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Skip to main menu</comment>
+        <event-block any="1" sid="8650607342541387">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7192611178674524" type="System">
+                    <param id="0" name="Variable">CONTROL_ACTION</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8465189833309755" type="System">
+                    <param id="0" name="Variable">CONTROL_ATTACK</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1000500029064629" type="System">
+                    <param id="0" name="Variable">CONTROL_ITEM</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8712847661198497" type="System">
+                    <param id="0" name="Variable">CONTROL_RUNE</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="6148431396921041" type="System">
+                    <param id="0" name="Variable">CONTROL_ALT</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7753829127912473" type="System">
+                    <param id="0" name="Variable">CONTROL_MENU</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1207725224572197" type="System">
+                    <param id="0" name="Variable">CONTROL_ACTION</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="733204382718668" type="System">
+                    <param id="0" name="Variable">CONTROL_ATTACK</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="347690467995165" type="System">
+                    <param id="0" name="Variable">CONTROL_ITEM</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8877980017972224" type="System">
+                    <param id="0" name="Variable">CONTROL_RUNE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="5403741208319075" type="System">
+                    <param id="0" name="Variable">CONTROL_ALT</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1368108551405638" type="System">
+                    <param id="0" name="Variable">CONTROL_MENU</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="2688327219561231" type="System">
+                    <param id="0" name="Layout">title</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

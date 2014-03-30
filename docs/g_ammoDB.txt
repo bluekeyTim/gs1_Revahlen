@@ -1,0 +1,23 @@
+G_AMMODB ARRAY
+
+==================================================================================================
+X 0 = Language
+
+Z
+0 : Name		(str)
+1 : Description		(str)
+2 : Attack Modifier	(int)	// adds to attack power
+3 : Element		(str)	// -1 for non-elemental
+4 : Animation		(str)	// projectile animation
+5 : Flash		(str)	// flash animation
+6 : Speed		(int)	// pixels per second
+7 : Homing		(int)	// 0 = false, 1 = aimed, 2 = homing
+8 : Persist		(int)	// 0 = false, 1 = true
+9 : Cost		(int)
+
+Y
+0  : AP			// extra damage
+1  : Firecracker	// fire damage
+2  : Hydrater		// water damage
+3  : Snowflake		// ice damage
+4  : 

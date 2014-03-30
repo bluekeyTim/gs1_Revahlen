@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout>startup</layout>
+        <layout active="1">worldmap</layout>
+        <event-sheet>WorldMap</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="0">
+        <family expanded="0" name="MOB" />
+        <family expanded="0" name="ZSORT" />
+        <family expanded="0" name="UI_1" />
+        <family expanded="0" name="UI_0" />
+        <family expanded="0" name="BG_1" />
+        <family expanded="0" name="BG_0" />
+        <family expanded="0" name="ATK" />
+        <family expanded="0" name="ZCHEAT" />
+        <family expanded="0" name="FX_0" />
+        <family expanded="0" name="MOBBOX" />
+        <family expanded="0" name="UI_3" />
+        <family expanded="0" name="UI_2" />
+        <family expanded="0" name="UI_control" />
+        <family expanded="0" name="SPELL" />
+    </families-expanded>
+</c2uistate>

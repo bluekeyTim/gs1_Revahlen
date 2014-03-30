@@ -1,0 +1,172 @@
+==================================================================================================
+
+DISPLAY MODES
+
+SNES		256x224
+4:3		320x240
+16:10		384x240
+16:9		416x234
+
+==================================================================================================
+
+CONTROLS
+
+DIRECTIONAL
+Up		walk north
+Down		walk south
+Left		walk east
+Right		walk west
+
+PRIMARY COMMANDS
+Attack		attack
+Action		context sensitive, if not next to any useable objects run instead
+Item		item satchel
+Rune		runecaster
+
+Secondary	hold down to enable secondary commands
+
+SECONDARY COMMANDS
+Attack		ammo pouch
+Action		examine object/MOB
+Item		key items
+
+Menu		pause/party/options menu
+
+==================================================================================================
+
+RUNE TYPES
+
+(F) Fire	Flamethrower - stream of fire, damage over time
+(W) Water	Wave - wave that spreads out over distance, medium damage, "Slow" on contact
+(Z) Static	Bolt - instant line of high damage from caster to edge of screen, "Paralysis" 3 seconds
+(I) Ice		Freeze Ray - projectile, medium damage and "Slow" status for 7 seconds
+(E) Earth	Overgrowth - vines emerge beneath target, medium damage, "Paralysis" for duration
+(A) Wind	Whirlwind - medium damage, "Confusion" 7 seconds
+(P) Venom	Toxic Gas - small damage, one target, "Poison" 15 seconds
+(G) Gravity	Crush - damage = 0.25 * TargetMaxHP, "Unconscious" 3 seconds
+(S) Shadow	Chaos - target everyone, if Targets DoomImmune = 0 then 10% chance instant death, else 25% chance for each buff, debuff, and high damage
+(L) Star	Star Shower - summons meteors across screen, medium damage for each strike on targets
+
+Heart		Heal - restores HP
+Soul		Restore - removes "wound" status on ally, restores 25% HP
+Shell		Shield - "Shield" 30 seconds, halves damage
+Energy		Empower - "Empower" 15 seconds, doubles normal damage
+
+==================================================================================================
+
+CHARACTER STATISTICS
+
+The following stats start at Lv1 and can be upgraded 4 times, up to Lv5. The player brings Upgrade Kits to Droum
+in order to upgrade any stats. Upgrade Kits are earned from all bosses and extra ones can be traded for or purchased.
+
+Body Armor
+	Defense		base 5, every upgrade adds 5HP to max HP, up to 25
+	Mobility	base 1.0, every upgrade adds 0.25 base movement and action speed, up to 2.0
+Quicksilver
+	Damage		base 1.0, every upgrade adds 0.5 to base attack damage, up to 3.0
+	Speed		base 1.0, every upgrade adds 0.25 to attack animation speed, up to 2.0
+Runecaster
+	Output		base 1.0, every upgrade adds 0.5 to rune spell base damage, up to 3.0
+	Charge		base 10, every upgrade adds 10RC to max RC, up to 50
+Satchel
+	Carry Capacity	base 8, every upgrade adds 2 to carry capacity, up to 16
+	Ammo Pouches	base 1, every upgrade adds 1 to ammo pouches, up to 5
+
+==================================================================================================
+
+FACTIONS
+
+0	: Player
+1	: Creature
+2	: Neutral
+3	: Raider
+4	: Beladahma
+5	: Cildora
+6	: Shinaru
+7	: Valtiez
+
+==================================================================================================
+
+ELEMENTS
+
+1 : Normal
+F : Fire
+W : Water
+Z : Electric
+I : Ice
+E : Earth
+A : Wind
+P : Poison
+G : Gravity
+S : Shadow
+L : Light
++ : Healing
+
+
+==================================================================================================
+
+STATUS EFFECTS
+
+Empower		doubles outgoing normal damage
+Shield		halves incoming normal damage
+Inspire		doubles outgoing special damage
+Resist		halves incoming special damage
+
+Unconscious	can't move, can't attack, can't use items, can't rune cast
+		uncureable, must wait
+
+Poison		deals 0.125 * MaxHP every 3 seconds
+		cured by "Antidote"
+
+Slow		halves movement speed
+		cured by "Candy Bar"
+
+Paralysis	can't move, can't attack, can use items, can rune cast
+		cured by "Relaxant"
+
+Shock		can't rune cast
+		cured by "Caster Fuse"
+
+==================================================================================================
+
+STAT FORMULAS
+
+
+
+==================================================================================================
+
+COMBAT FORMULAS
+
+if NORMAL ATTACK
+
+	1. Damage = Attack * (1 + QuicksilverMod/4*2)
+	2. if Empowered > 0 : Damage * 2
+
+	On Attack Collision with Target
+	3. Shield
+		if Target Shield > 0 : Damage / 2
+	4. Elementals
+		A. Weakness : Damage * 2	<-- ignore if player
+		B. Protection : Damage / 2
+		C. Absorption : Damage * -1	<-- ignore if player
+		D. Immunity : Damage = 0
+	5. Deal Damage
+		TargetHP = TargetHP - max(-999, min(round(Damage), 999))
+
+if SPECIAL ATTACK
+
+	1. Damage = SpellPower * (1 + RunecasterOutput/4)
+	2. if Empowered > 0 : Damage * 2
+
+	On Attack Collision with Target
+	3. Shield
+		if Target Shield > 0 : Damage / 2
+	4. Elementals
+		A. Weakness : Damage * 2	<-- ignore if player
+		B. Protection : Damage / 2
+		C. Absorption : Damage * -1	<-- ignore if player
+		D. Immunity : Damage = 0
+	5. Deal Damage
+		TargetHP = TargetHP - max(-999, min(round(Damage), 999))
+
+==================================================================================================

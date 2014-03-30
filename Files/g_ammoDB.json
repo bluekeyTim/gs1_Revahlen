@@ -1,0 +1,69 @@
+{
+	"c2array":true,
+	"size": 
+	[
+		1,
+		5,
+		8
+	],
+	"data": 
+	[
+		[
+			[
+				"Normal",
+				"Standard pistol rounds",
+				0,
+				"1",
+				"gun_norm0",
+				"gun0",
+				192,
+				1,
+				10
+			],
+			[
+				"AP",
+				"Armor piercing rounds",
+				1,
+				"1",
+				"gun_norm0",
+				"gun0",
+				192,
+				1,
+				10
+			],
+			[
+				"Firecracker",
+				"Explosive incendiary rounds",
+				0,
+				"F",
+				"gun_fire0",
+				"gun0",
+				128,
+				1,
+				15
+			],
+			[
+				"Hydrater",
+				"Water balloons?!",
+				0,
+				"W",
+				"gun_water0",
+				"gun0",
+				96,
+				1,
+				15
+			],
+			[
+				"Snowflake",
+				"Liquid nitrogen rounds",
+				0,
+				"I",
+				"gun_ice0",
+				"gun0",
+				128,
+				1,
+				15
+			]
+		]
+	]
+}

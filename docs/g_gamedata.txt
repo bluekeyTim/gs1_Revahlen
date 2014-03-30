@@ -1,0 +1,160 @@
+G_GAMEDATA ARRAY
+
+==================================================================================================
+X0 : Game Data/Progression
+____________________________________________________________________________
+
+Y 0 : General Stats
+
+Z:
+0 : save slot		(int)
+1 : player Character	(int)	//0="Max", 1="Zed", 2="Robin", 3="Evelynn"
+2 : ally 1		(int)	//-1= no one
+3 : ally 2		(int)
+4 : playtime		(int)	//in seconds
+5 : RC			(int)
+6 : language		(int)	//0=english
+7 : map index		(int)	//0=unknown,1=North Sarhajos,2=South Sarhajos
+8 : location ID		(int)	//see Map Locations below for IDs
+9 : active quest ID	(int)
+
+10: CONTROL_UP		(int)	//Keycodes, for custom keyboard controls
+11: CONTROL_DOWN
+12: CONTROL_LEFT
+13: CONTROL_RIGHT
+14: CONTROL_ACTION
+15: CONTROL_ATTACK
+16: CONTROL_ITEM
+17: CONTROL_RUNE
+18: CONTROL_ALT
+19: CONTROL_MENU
+
+20: Armor HP		(int)	//Upgrade Levels 0-4
+21: Armor Mobility
+22: Weapon Power
+23: Weapon Speed
+24: Rune Power
+25: Rune RC
+26: Item Capacity
+27: Item Ammo Pouches
+
+28: Name
+____________________________________________________________________________
+
+**Quest Progress is indicated by an Integer.
+		0 =	not started
+		1+ =	active, progression
+		200+ =	completed
+
+Y 1 : Quest Progression
+
+Z:
+MAIN QUEST LINE
+0 : "The Taiscrethean Script" (Intro)
+____________________________________________________________________________
+
+**Locations need to be "unlocked" to show up on the map.
+0 = undiscovered, 1 = known, 2 = visited
+
+Y 2 : Map Locations
+
+Z:
+
+SARHAJOS NORTH
+0 : Graystone
+1 : Dry Docks
+2 : Sarhajos North Station
+3 : Sarhajos North West
+4 : Sarhajos North East
+5 : North Rallian Caves
+6 : Rallian Pass
+7 : Naja Mha'neyr
+
+SARHAJOS SOUTH
+8 : Sarhajos South Station
+9 : Sarhajos South West
+10: Eanfara
+11: Kearner's Trail
+12: Kavanagh Mine
+13: Sarhajos South East
+14: Culamora Caves
+15: Outlaw Valley
+16: Feall
+17: Burning Plains
+18: Ormond Ranch
+19: Abandoned Cildoran Test Site
+____________________________________________________________________________
+
+Y 3 : Item Inventory
+		 -2	= locked
+		 65536	= empty
+		 >=0	= item ID, see G_ITEMDB
+
+Z:
+0    : Money		(int)
+
+1-16 : Normal Items
+
+17-32: Key Items
+
+33-38: Ammo		(str)	// "itemID|Ammo Count"
+
+____________________________________________________________________________
+
+Y 4 : Rune Inventory
+
+Z:
+0  : Fire
+1  : Water
+2  : Static
+3  : Ice
+4  : Earth
+5  : Wind
+6  : Venom
+7  : Gravity
+8  : Shadow
+9  : Star
+10 : Heart
+11 : Shell
+12 : Energy
+13 : Soul
+14 : Destruction
+
+==================================================================================================
+X1 : Character Stats
+
+Y 0-3 : 0="Max", 1="Zed", 2="Robin", 3="Evelyn"
+
+Z:
+0 : Name		(str)
+1 : HP			(int)
+2 : HPmax		(int)
+
+3 : Attack Power	(int)
+4 : Attack Type		(int)	// 0 = projectile, 1 = melee
+5 : Ammo Type		(int)	// itemID in G_ITEMDB, 0 = normal rounds
+6 : Attack Speed	(int)	// Animation Base Speed
+7 : Attack SFX		(str)
+
+8 : Empower		(int)
+9 : Shield
+
+10: Unconscious		(int)
+11: Poison
+12: Slow
+13: Paralysis
+14: Confusion
+15: Shock
+
+==================================================================================================
+X2 : Treasure Chest Status
+
+Coordinates of collected chests, so that they don't respawn each time a map is entered. That would be disastrous.
+0 = unopened
+-1 = opened
+>0 = need at least one of ITEM_ID to unlock
+
+RALLIAN MOUNTAIN TREASURE
+0,0 : INTRO_5, "Strange Artifact"
+0,1 : INTRO_3, "RC Battery"
+

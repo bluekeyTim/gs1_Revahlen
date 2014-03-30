@@ -1,0 +1,60 @@
+G_RUNEDB ARRAY
+===========================================================================
+X0 : Rune List
+___________________________________________________________________________
+
+Y = Rune ID
+
+0 : Fire
+1 : Water
+2 : Static
+3 : Ice
+4 : Earth
+5 : Wind
+6 : Venom
+7 : Gravity
+8 : Shadow
+9 : Star
+10 : Destruction
+11 : Heart
+12 : Soul
+13 : Shell
+14 : Energy
+___________________________________________________________________________
+
+Z:
+0 : Rune Name
+1-?? : Spell ID List
+
+===========================================================================
+X1: Spell List
+___________________________________________________________________________
+
+Y = Spell ID
+
+0 : Flamethrower
+1 : Wave
+2 : Bolt
+3 : Freeze Ray
+4 : Overgrowth
+5 : Whirlwind
+6 : Toxic Gas
+7 : Crush
+8 : Chaos
+9 : Star Shower
+10: Heal
+11: Shield
+12: Empower
+13: Revival
+14: Destruction
+
+___________________________________________________________________________
+
+Z:
+0 : Spell Name		(str)
+1 : Description		(str)
+2 : Function Name	(str)
+3 : RC Cost		(int)
+4 : Power		(int)
+5 : Element		(str)
+___________________________________________________________________________

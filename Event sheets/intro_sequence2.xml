@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>intro_sequence2</name>
+    <events>
+        <event-block sid="5281451815311776">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5307211093177804" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="994199950592196" type="System">
+                    <param id="0" name="Variable">FADE</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="5529166933470018" type="g_audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;mus_introtheme&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5990489554209246">
+            <conditions>
+                <condition id="1" name="Preloads complete" sid="826681031719086" type="g_audio" />
+                <condition id="-4" name="Trigger once while true" sid="5466691286760534" type="System" />
+            </conditions>
+            <actions>
+                <action id="7" name="Play (by name)" sid="2341483709926486" type="g_audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;mus_introtheme&quot;</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">20*log10(MUSIC_VOLUME/100)</param>
+                    <param id="2" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="553311448031206" type="g_audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;mus_cave0&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5865232654342461">
+            <conditions>
+                <condition id="5" name="Is tag playing" sid="9524573048949816" type="g_audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="7371429387733924" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4714131663625898" type="System">
+                    <param id="0" name="Variable">FADE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set scale" sid="7843303258057109" type="ui_font1">
+                    <param id="0" name="Scale">1.0</param>
+                </action>
+                <action id="0" name="Set text" sid="6485499562382156" type="ui_font1">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="5097150594857397" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_fade</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-10" name="Set value" sid="488968179074292" type="ui_font1">
+                    <param id="0" name="Instance variable">ui_var</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="4558213043404876" type="ui_font1">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="7672332703285693" title="Travel FX">
+            <sub-events>
+                <event-block sid="2463935459671377">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6226301141776848" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="9833261625445174" type="e_des_bg0">
+                            <param id="0" name="X">e_des_bg0.X + 0.05</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7386950662748882" type="e_des_mode7">
+                            <param id="0" name="Instance variable">pos_y</param>
+                            <param id="1" name="Value">e_des_mode7.pos_y + 0.05</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="8220724385945425" type="e_des_mode7">
+                            <param id="0" name="Effect">&quot;mode7&quot;</param>
+                            <param id="1" name="Parameter index">1</param>
+                            <param id="2" name="Value">e_des_mode7.pos_y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6526342157367441">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="261430200353076" type="System">
+                            <param id="0" name="Interval (seconds)">1.5</param>
+                        </condition>
+                        <condition id="-16" name="Is on layer" sid="5815415920436874" type="e_des1">
+                            <param id="0" name="Layer">&quot;bg1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9682428409349958">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="7050292789016205" type="e_des_bg1">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">32</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="6953608321011513" type="e_des_bg1">
+                                    <param id="0" name="Y">e_des_bg1.Y - 1</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="7846213828508363" type="e_des1">
+                                    <param id="0" name="Y">e_des1.Y - 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3751031618933456">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="5157516283822416" type="e_des_bg1">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">32</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="6819972497794665" type="e_des_bg1">
+                                    <param id="0" name="Y">32</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="2278954817109867" type="e_des1">
+                                    <param id="0" name="Y">64</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4658878598510993">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="2602668031197864" type="e_des_bg0">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">-128</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="7836021882189979" type="e_des_bg0">
+                            <param id="0" name="X">-256</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5947323899250872">
+                    <conditions>
+                        <condition id="0" name="On ended" sid="8250109523258616" type="g_audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1052640190376696" type="System">
+                            <param id="0" name="Variable">WARP_X</param>
+                            <param id="1" name="Value">192</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8507672732267" type="System">
+                            <param id="0" name="Variable">WARP_Y</param>
+                            <param id="1" name="Value">224</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4006300284524728" type="System">
+                            <param id="0" name="Variable">WARP_MUSIC_CHANGE</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5453938216773568" type="System">
+                            <param id="0" name="Variable">MUSIC_NAME</param>
+                            <param id="1" name="Value">&quot;cave0&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9707307763613344" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8211829497210968" type="System">
+                            <param id="0" name="Variable">FADE</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2840712842065867" title="Fade Control">
+            <sub-events>
+                <event-block sid="654">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="655" type="System">
+                            <param id="0" name="Variable">FADE</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="656">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="657" type="System">
+                                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="658" type="System">
+                                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                                    <param id="1" name="Opacity">max(0, LayerOpacity(&quot;fade&quot;) - 50 * dt)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block collapsed="1" sid="945577279104358">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4042687698419273" type="ui_font1">
+                                    <param id="0" name="Instance variable">ui_fade</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="6740639713492986" type="ui_font1">
+                                    <param id="0" name="Opacity">min(100, ui_font1.Opacity + 100 * dt)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="9621860219719255">
+                                    <conditions>
+                                        <condition id="-10" name="Compare opacity" sid="4270432292273336" type="ui_font1">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="9323434545433734" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="4406755501790977" type="System">
+                                            <param id="0" name="Seconds">3.0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="9209767625773339" type="ui_font1">
+                                            <param id="0" name="Instance variable">ui_fade</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="5433956311744141">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1668118198412701" type="ui_font1">
+                                    <param id="0" name="Instance variable">ui_fade</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="477602017338482" type="ui_font1">
+                                    <param id="0" name="Opacity">max(0, ui_font1.Opacity - 100 * dt)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="5873668035035003">
+                                    <conditions>
+                                        <condition id="-10" name="Compare opacity" sid="5982485621566748" type="ui_font1">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="Opacity">0</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="4646100470359235" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="7940612917888291" type="ui_font1">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="1222390184709061" type="System">
+                                            <param id="0" name="Seconds">2.0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3619179388915336" type="ui_font1">
+                                            <param id="0" name="Instance variable">ui_fade</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="8281171961034309">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7473548763404" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="1233283217538137" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="2347881064884388" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;BLUE KEY GAMES PRESENTS&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7641958415272993">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="1188892297016801" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="6389428196009492" type="ui_font1">
+                                                    <param id="0" name="Scale">2.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="3694308141423146" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;REVAHLEN&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="7638220351050922">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2426838121430651" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="337815872922936" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="4755504704985258" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;STORY&quot; &amp;newline&amp; &quot;TOM SURRETTE&quot; &amp;newline&amp; &quot;TIM MCCABE&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="1074079743360548">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6551165440584228" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="7370802866641717" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="1115802791580854" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;SCREENPLAY&quot; &amp;newline&amp; &quot;TOM SURRETTE&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8801035566793563">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7384644721616395" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="7592628134122899" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="7508707695667982" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;MUSIC&quot; &amp;newline&amp; &quot;CHRIS THOMPSEN&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8713684270306507">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2069172102875264" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="3171403144073739" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="371842562584096" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;PROGRAMMING&quot; &amp;newline&amp; &quot;TIM MCCABE&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2732950123737163">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="4282682938315794" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="7562440221145157" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="9663608815538626" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;MAP DESIGN&quot; &amp;newline&amp; &quot;TIM MCCABE&quot; &amp;newline&amp; &quot;KEVIN ANNIS&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="5053923235916428">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="5378531602681884" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">8</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="8974631628171675" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="5688639067016706" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;PROJECT DIRECTOR&quot; &amp;newline&amp; &quot;TIM MCCABE&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3312412306339014">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="5207526840498674" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">9</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="6932449976767458" type="ui_font1">
+                                                    <param id="0" name="Scale">1.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="6639561483450833" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="659">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="660" type="System" />
+                        <condition id="-14" name="Compare variable" sid="661" type="System">
+                            <param id="0" name="Variable">FADE</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="662">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="663" type="System">
+                                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="664" type="System">
+                                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                                    <param id="1" name="Opacity">min(100, LayerOpacity(&quot;fade&quot;) + 50 * dt)</param>
+                                </action>
+                                <action id="-25" name="Go to layout (by name)" sid="9837051978055052" type="System">
+                                    <param id="0" name="Layout">&quot;intro_0&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

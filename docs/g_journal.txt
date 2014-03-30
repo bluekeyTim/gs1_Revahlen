@@ -1,0 +1,16 @@
+G_JOURNAL ARRAY
+
+==================================================================================================
+
+X : Quest ID
+
+0	: Quest Title
+1-??	: Journal Entry (based on progression ID)
+
+Only the latest entry is visible, unless the quest is complete. The final entry should
+read "endquest" so that the journal entry can be removed.
+____________________________________________________________________________
+MAIN QUEST LINE
+
+0	: "The Aistrois" (Intro)
+1	: 

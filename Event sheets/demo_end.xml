@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>demo_end</name>
+    <events>
+        <include>GameSystems</include>
+        <include>UISystems</include>
+        <event-block sid="5726905555364318">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7215618252220361" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="987631667085656" type="System">
+                    <param id="0" name="Variable">FADE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

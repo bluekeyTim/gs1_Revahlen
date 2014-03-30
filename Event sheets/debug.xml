@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>debug</name>
+    <events>
+        <include>MapCommon</include>
+        <event-block sid="3257071736307055">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3248246442145838" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="7" name="Play (by name)" sid="6482104201060067" type="g_audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;mus_max0&quot;</param>
+                    <param id="3" name="Loop">1</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1722715169691726">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="8077033627566986" type="g_con_key">
+                    <param id="0" name="Key">77 (M)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="2552765356836649" type="g_function">
+                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                    <param id="1" name="Parameter {n}">2{###}0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5408495764410433">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3043171508048225" type="g_con_key">
+                    <param id="0" name="Key">16 (Shift)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4844994724693931">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1735716497425649" type="c_mobbox">
+                            <param id="0" name="Instance variable">AItype</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;player&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3523236899143808">
+                            <conditions>
+                                <condition id="0" name="On click" sid="7667747761218318" type="g_con_mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set at XYZ" sid="3601352111265251" type="g_gamedata">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Z">23</param>
+                                    <param id="3" name="Value">min(4, g_gamedata.At(0,0,23)+1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3803570315538824">
+                            <conditions>
+                                <condition id="0" name="On click" sid="1333210946916333" type="g_con_mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                    <param id="1" name="Click type">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set at XYZ" sid="4355708979475915" type="g_gamedata">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Z">23</param>
+                                    <param id="3" name="Value">max(0, g_gamedata.At(0,0,23)-1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6692542429548964">
+            <conditions>
+                <condition id="-22" name="Else" sid="2340291829580138" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6113648158860761">
+                    <conditions>
+                        <condition id="0" name="On click" sid="5590997555496345" type="g_con_mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-3" name="Create object" sid="502656315312372" type="System">
+                            <param id="0" name="Object to create">fx_poisoned</param>
+                            <param id="1" name="Layer">&quot;sprite&quot;</param>
+                            <param id="2" name="X">g_con_mouse.X</param>
+                            <param id="3" name="Y">g_con_mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4027782864639321">
+            <conditions>
+                <condition id="0" name="On click" sid="8781110135648264" type="g_con_mouse">
+                    <param id="0" name="Mouse button">1</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="8530332160518755" type="MOB">
+                    <param id="0" name="Instance variable">sprID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1793529451933301">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="7321648462405047" type="g_con_key">
+                            <param id="0" name="Key">49 (1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="6267236711549785" type="MOB">
+                            <param id="0" name="Instance variable">Empower</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9483545035188305">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3969519227006929" type="System" />
+                        <condition id="2" name="Key is down" sid="158817920243113" type="g_con_key">
+                            <param id="0" name="Key">50 (2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="7465997513094345" type="MOB">
+                            <param id="0" name="Instance variable">Shield</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="937934975635034">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="2095222360000726" type="System" />
+                        <condition id="2" name="Key is down" sid="3187510215820561" type="g_con_key">
+                            <param id="0" name="Key">51 (3)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="9628027883043257" type="MOB">
+                            <param id="0" name="Instance variable">Unconscious</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6698028039509784">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="9739445557533278" type="System" />
+                        <condition id="2" name="Key is down" sid="2830082558830465" type="g_con_key">
+                            <param id="0" name="Key">52 (4)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="5603773324672667" type="MOB">
+                            <param id="0" name="Instance variable">Poison</param>
+                            <param id="1" name="Value">9</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9886385572207495">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="1497324197716891" type="System" />
+                        <condition id="2" name="Key is down" sid="7049934390458239" type="g_con_key">
+                            <param id="0" name="Key">53 (5)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="1699212258478575" type="MOB">
+                            <param id="0" name="Instance variable">Slow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3729796898810295">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6577436195750446" type="System" />
+                        <condition id="2" name="Key is down" sid="897065188345759" type="g_con_key">
+                            <param id="0" name="Key">54 (6)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="2544017107692342" type="MOB">
+                            <param id="0" name="Instance variable">Paralysis</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5084615039094833">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="2652188313074549" type="System" />
+                        <condition id="2" name="Key is down" sid="2228955355074281" type="g_con_key">
+                            <param id="0" name="Key">55 (7)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="6489849127233916" type="MOB">
+                            <param id="0" name="Instance variable">Confusion</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6816573002475783">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3948628079812271" type="System" />
+                        <condition id="2" name="Key is down" sid="3786791868124005" type="g_con_key">
+                            <param id="0" name="Key">56 (8)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="3116011868331784" type="MOB">
+                            <param id="0" name="Instance variable">Shock</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

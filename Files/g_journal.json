@@ -1,0 +1,39 @@
+{
+    "c2array": true,
+    "size": [
+        20,
+        10,
+        1
+    ],
+    "data": [
+        [
+            ["The Taiscrethean Script"],
+            ["Arrived at the site. Exploring with Zed.|1|5"],
+			["Came across some scarabs. Zed doesn't like them. Gotta clear them out or we can't move on.|1|5"],
+			["Cleared out the scarabs.\n\nInvestigating site further.|1|5"],
+			["A number of boulders are in the way. Zed gave me some dynamite. Should be fun.|1|5"],
+			["Droum received a set of cryptic directions from one of our sources. I'm carrying it with me.|1|5"],
+			["Looks like someone left this chest behind in a hurry.|1|5"],
+			["Found a Taiscrethean artifact, but we woke up a nest of scarabs! Gotta escape this place!|1|5"],
+			["Valtiez's men tracked us down in the middle of nowhere. 3 against 2. We've faced worse odds.|1|5"],
+			[0]
+        ],
+        [
+            ["Quest 2"],
+            ["This is quest info. Let's add some objectives!|1|3"],
+			["This is more quest info. A second page of it even!|1|3"],
+			["Check out the older journal entries with < or >!|1|0;1"],
+			[0]
+        ],
+        [
+            ["Quest 3!!!"],
+            ["Stuff goes here.|1|0;1;2;3;4;5;6;7"],
+			[0]
+        ],
+        [
+            ["Quest 444444"],
+            ["Alright, let's test this.\nTestTestTest1234|1|-1"],
+			[0]
+        ]
+    ]
+}

@@ -1,0 +1,29 @@
+G_ITEMDB ARRAY
+
+==================================================================================================
+X 0 = Language
+
+Z
+0 : Name		(str)
+1 : Description		(str)
+2 : Function Name	(str)	// NULL means no function
+3 : Cost		(int)
+4 : Type		(int)	// 0 = instant use, 1 = target ally
+
+Y
+0  : Upgrade Kit	// allows Droum to level up equipment
+1  : Bandage		// restores 10 + 10% HP
+2  : Stitch Kit		// restores 25 + 17.5% HP
+3  : Medbag		// restores 150 + 25% HP
+4  : First Aid		// restores life and 15% HP
+5  : RC Battery		// restores 10 RC
+6  : RC Fuse		// removes shock
+7  : Antidote		// removes poison
+8  : Candy Bar		// removes slow
+9  : Relaxant		// removes paralysis
+10 : Tonic		// removes all status ailments
+11 : Dynamite		// plants explosive that detonates in 3 seconds
+
+12 : Scribbled Note	// clue to intro cave maze
+13 : Soup
+14 : Strange Artifact	// key item for intro quest

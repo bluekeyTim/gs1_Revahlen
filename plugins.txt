@@ -1,0 +1,10 @@
+BEHAVIORS
+Boids Behavior - tanamoshi
+Nickname Behavior/Plugin - rexrainbow
+Scrolling Text Behavior - rexrainbow
+
+PLUGINS
+Magicam Plugin - linkman2004
+
+FX
+mode7 - R0J0hound

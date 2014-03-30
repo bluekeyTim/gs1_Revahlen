@@ -1,0 +1,2341 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>intro_1</name>
+    <events>
+        <include>MapCommon</include>
+        <event-block collapsed="1" sid="4783366291091067">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5753443824124861" type="System" />
+                <condition id="2" name="Compare at XYZ" sid="9887907808175402" type="g_gamedata">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Comparison">5</param>
+                    <param id="4" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="2004042488761137" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9343984533956914">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="1456813776452959" type="System">
+                            <param id="0" name="Object">c_c_scarab</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9715331825434902" type="c_mobbox">
+                            <param id="0" name="Instance variable">sprID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">c_c_scarab.sprID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5641380466305575" type="c_c_scarab" />
+                        <action id="-9" name="Destroy" sid="9101971022799987" type="c_mobbox" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6452555752984367">
+                            <conditions>
+                                <condition id="2" name="Compare at XYZ" sid="6154657460553242" type="g_gamedata">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Comparison">5</param>
+                                    <param id="4" name="Value">4.2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="4630780145833509" type="o_rock" />
+                                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="2442428052489531" type="c_mobbox" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block collapsed="1" sid="671669761822679">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="3103593904469054" type="c_mobbox">
+                    <param id="0" name="Object">e_c_trigger</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="951950088584322" type="System">
+                    <param id="0" name="Variable">PAUSE</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7409741874303421">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6259559477819216" type="e_c_trigger">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;bug&quot;</param>
+                        </condition>
+                        <condition id="2" name="Compare at XYZ" sid="5901293344217397" type="g_gamedata">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Comparison">0</param>
+                            <param id="4" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1502783712711077">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="6829280574187684" type="System">
+                                    <param id="0" name="Object">c_mobbox</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="6100798024196587" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set at XYZ" sid="9731735640461055" type="g_gamedata">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Value">1.5</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="5395975061642778">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4492982586665694" type="c_mobbox">
+                                            <param id="0" name="Instance variable">sprID</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="5353435571329545" type="c_mobbox">
+                                            <param id="0" name="Instance variable">run</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="6033557772876465" type="c_mobbox">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;scripted&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8430414442218694">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6619580847673037" type="e_c_trigger">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;bomb&quot;</param>
+                        </condition>
+                        <condition id="2" name="Compare at XYZ" sid="4802651624463415" type="g_gamedata">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Comparison">0</param>
+                            <param id="4" name="Value">3</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9009055018255926" type="c_mobbox">
+                            <param id="0" name="Instance variable">AItype</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;player&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2667419340848721">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="4389023692727193" type="System">
+                                    <param id="0" name="Object">c_mobbox</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="6103041009468091" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set at XYZ" sid="9957506668083359" type="g_gamedata">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Value">3.5</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="3006057580004417">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3563064838759713" type="c_mobbox">
+                                            <param id="0" name="Instance variable">sprID</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="2333738955904525" type="c_mobbox">
+                                            <param id="0" name="Instance variable">run</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8630280118914295" type="c_mobbox">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;scripted&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Bug conversation.</comment>
+        <event-block collapsed="1" sid="7032914817130083">
+            <conditions>
+                <condition id="2" name="Compare at XYZ" sid="7024620358005525" type="g_gamedata">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Comparison">0</param>
+                    <param id="4" name="Value">1.5</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1596320164530649">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7578930951650683" type="c_mobbox">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;scripted&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block collapsed="1" sid="7893860545446363">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="1793590165737877" type="System">
+                                    <param id="0" name="Object">c_mobbox</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="6906329944667265">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="3720421333579623" type="c_mobbox">
+                                            <param id="0" name="Object">c_path</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9008702447710978" type="c_path">
+                                            <param id="0" name="Instance variable">sprID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">c_mobbox.sprID</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="5587123425623075" type="c_path">
+                                            <param id="0" name="Instance variable">path</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">c_mobbox.Pathfinding.NodeCount-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="132080758760484" type="c_mobbox">
+                                            <param id="0" name="Instance variable">path</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="558084500746772">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9016448781310098" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;message&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5218371498547355">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="4667894756985552" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="4817354660541642" type="System">
+                                            <param id="0" name="Variable">PAUSE</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="6419407530378792" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="6475752360747112" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6124602812092698">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8745908292964842" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block collapsed="1" sid="6965031648930581">
+                                            <conditions>
+                                                <condition behavior="8Dir" id="0" name="Is moving" sid="4265440305730492" type="c_mobbox" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="5108420368428998" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">dir</param>
+                                                    <param id="1" name="Value">round(c_mobbox.8Dir.MovingAngle / 90) * 90</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="9223434795998856">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="8801082659600734" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="3821544571361066" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="7599683956615888">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="9701695006219535" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;walk_&quot; &amp; c_mobbox.dir</param>
+                                                        </action>
+                                                        <action behavior="8Dir" id="4" name="Set max speed" sid="8231647923145531" type="c_mobbox">
+                                                            <param id="0" name="Max Speed">64</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block collapsed="1" sid="9708574049123825">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="4211841016767137" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="8889160412217406">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="6478960908864601" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Pathfinding" id="0" name="Find path" sid="9114323701076034" type="c_mobbox">
+                                                            <param id="0" name="X">128</param>
+                                                            <param id="1" name="Y">368</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="1079843317622977">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="1075610045084028" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">path</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">-1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="6399286807229107" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="6038452494231156" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;idle_0&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block collapsed="1" sid="1260197976896545">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="5636596153715391" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="1262229687850901">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="3998346167062496" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Pathfinding" id="0" name="Find path" sid="1251030862163409" type="c_mobbox">
+                                                            <param id="0" name="X">128</param>
+                                                            <param id="1" name="Y">400</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="3672840257356754">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="8267251090552372" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">path</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">-1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="6368798843323666" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="7490630311359532" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;idle_0&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="9845704171958152">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9102141873626551" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="5093916895008726" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">path</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="6323924479995151">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="3699762306881387" type="System">
+                                                            <param id="0" name="First value">c_mobbox.PickedCount</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Second value">2</param>
+                                                        </condition>
+                                                        <condition id="-4" name="Trigger once while true" sid="1615316507112766" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="4536128473567025" type="g_function">
+                                                            <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                            <param id="1" name="Parameter {n}">2{###}4</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="3016757708059855" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="4788373722978483">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7542790972277039" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="293806075443571">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="899326108354088" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block collapsed="1" sid="6037949289162425">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="2884471492537344" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="623638237310007" type="g_function">
+                                                            <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                            <param id="1" name="Parameter {n}">2{###}5</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="7906849503026672" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">3</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <comment>Max faces Zed.</comment>
+                                                        <event-block sid="7913481989039619">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="4820930550657872" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="9982013133957845" type="MOB">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="4159294095569807" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="5967040787326243">
+                                                                    <conditions>
+                                                                        <condition id="-7" name="Compare instance variable" sid="6773578553601006" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Comparison">2</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="2347221749804176" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="6917984187881984">
+                                                                    <conditions />
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="5227683073556241" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">anim</param>
+                                                                            <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <comment>Zed hesitates before facing Max.</comment>
+                                                        <event-block sid="9005970518698568">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="4448303894409142" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="7353723068618449" type="MOB">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="1532715021200544" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="4087874880827476">
+                                                                    <conditions>
+                                                                        <condition id="-7" name="Compare instance variable" sid="7169981498506481" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Comparison">2</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="4034947100796722" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="4709524175645589">
+                                                                    <conditions />
+                                                                    <actions>
+                                                                        <action id="-16" name="Wait" sid="288360034596782" type="System">
+                                                                            <param id="0" name="Seconds">0.5</param>
+                                                                        </action>
+                                                                        <action id="-10" name="Set value" sid="8602843024694902" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">anim</param>
+                                                                            <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="1906917200914926">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="4525463552615872" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="7709388669877729" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="492066894099831" type="g_function">
+                                                            <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                            <param id="1" name="Parameter {n}">2{###}6</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="291323179024529" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">4</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="4173695335486742">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="4001652458507585" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="399484596514722" type="MOB">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="9335041090575375" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90 - 180</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="9074696382304226">
+                                                                    <conditions>
+                                                                        <condition id="-7" name="Compare instance variable" sid="942038556850843" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Comparison">2</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="2489433783749365" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="761254506294052">
+                                                                    <conditions />
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="2505737807847376" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">anim</param>
+                                                                            <param id="1" name="Value">&quot;e_cross0&quot;</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="5032071606398403">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="2738797271952195" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="9620820508843609" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="1616449298223767" type="g_function">
+                                                            <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                            <param id="1" name="Parameter {n}">2{###}7</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="5556019896331003" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">5</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="3094879877059562">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="2371458621645767" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="1622221843111759" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;e_laugh1&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="1914476012808205">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="2283126571924689" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="6463156089856147" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="4162879291629206" type="g_function">
+                                                            <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                            <param id="1" name="Parameter {n}">2{###}8</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="5060811606547084" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">6</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="9022473909146105">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="3172009221462874" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="6814065853291157" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;e_cross1&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="7021537540280987">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="2977273421621165" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-16" name="Wait" sid="1788415508469139" type="System">
+                                                                    <param id="0" name="Seconds">1.0</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="1212803319375155" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="4523425080796094">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="1797730400118551" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="6120802446478837" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">6</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="9008012900916703" type="g_function">
+                                                            <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                            <param id="1" name="Parameter {n}">2{###}9</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="219735054784641" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">7</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="6385728344849038">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="536233572165904" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="3646024854948704" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;e_angry&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="8178969975576152">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="5658857997974755" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="670131767124866" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">7</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="2806869228414124" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="4" name="Set at XYZ" sid="2535936281009734" type="g_gamedata">
+                                                            <param id="0" name="X">0</param>
+                                                            <param id="1" name="Y">1</param>
+                                                            <param id="2" name="Z">0</param>
+                                                            <param id="3" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="6136535869248508">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="3249048800674441" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">3</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="3555473741613235" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">state</param>
+                                                                    <param id="1" name="Value">&quot;idle&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2271753335232913">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7311388336773186" type="c_mobbox">
+                            <param id="0" name="Instance variable">sprID</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7977913176603495" type="MOB">
+                            <param id="0" name="Instance variable">sprID</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Set object time scale" sid="9245455388214801" type="System">
+                            <param id="0" name="Object">c_mobbox</param>
+                            <param id="1" name="Time scale">1</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="7429329251735551" type="System">
+                            <param id="0" name="Object">MOB</param>
+                            <param id="1" name="Time scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>If all scarabs in area are killed, progress!</comment>
+        <event-block sid="7505490696856333">
+            <conditions>
+                <condition id="2" name="Compare at XYZ" sid="4746503348138116" type="g_gamedata">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Comparison">2</param>
+                    <param id="4" name="Value">3</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="44065661607225" type="System">
+                    <param id="0" name="First value">c_c_scarab.Count</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="6559377017725721" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set at XYZ" sid="2270107506968001" type="g_gamedata">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Receive dynamite from Zed.</comment>
+        <event-block collapsed="1" sid="1517006061118759">
+            <conditions>
+                <condition id="2" name="Compare at XYZ" sid="1160156768414547" type="g_gamedata">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Comparison">0</param>
+                    <param id="4" name="Value">3.5</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1813250309942322">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8103124815358423" type="c_mobbox">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;scripted&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7634005257353706">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="8384384324972253" type="System">
+                                    <param id="0" name="Object">c_mobbox</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3223445876631552">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2910046135841061" type="c_mobbox">
+                                            <param id="0" name="Object">c_path</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="4142896899746214" type="c_path">
+                                            <param id="0" name="Instance variable">sprID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">c_mobbox.sprID</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3404057088255036" type="c_path">
+                                            <param id="0" name="Instance variable">path</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">c_mobbox.Pathfinding.NodeCount-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9601557028497006" type="c_mobbox">
+                                            <param id="0" name="Instance variable">path</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>If the MOB is moving we set the direction to the movement angle.</comment>
+                        <event-block sid="489469550452709">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4204305964379146" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;message&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1362474053574176">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="7665375802683266" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7893313428895004" type="System">
+                                            <param id="0" name="Variable">PAUSE</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="1582933838935939" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="714322901715082" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1516203133274349">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6107702001393427" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block collapsed="1" sid="9689749696622367">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6066196284769946" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="3115271691792002" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}10</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="5271639408367974" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">0.5</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="677606689076689">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="7625270606745491" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="5030498238492724" type="MOB">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="1812038657157889" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">path</param>
+                                                            <param id="1" name="Value">-1</param>
+                                                        </action>
+                                                        <action behavior="Pathfinding" id="0" name="Find path" sid="6213101219872084" type="c_mobbox">
+                                                            <param id="0" name="X">MOB.X - 24</param>
+                                                            <param id="1" name="Y">MOB.Y</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="7138691640621359">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="9941437488845891" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="9749686784360475" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="5986833974935407" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;idle_0&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block collapsed="1" sid="366099834377474">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="753435798479405" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="4903919969008982" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}11</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="9522201307227783" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="5857051612047257">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="6925644419848838" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="3992851504682079" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="9975564541357098" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;idle_0&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block collapsed="1" sid="5543534622473351">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="2552944113970784" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="9901677986322647" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="9235413923591321" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}12</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="4559701071239279" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="2602177121704933">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="1015038923590591" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="1123651210105748" type="MOB">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="5937918545230196" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="8406375020109576">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="8509592965983602" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="3509822621886544" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="1515283758320684">
+                                                            <conditions />
+                                                            <actions>
+                                                                <action id="-16" name="Wait" sid="5392028871665355" type="System">
+                                                                    <param id="0" name="Seconds">1.0</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="2719289468061768" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="6494116239766491">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="5701508939387369" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="6889317403405181" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6250396398153825" type="System">
+                                                    <param id="0" name="Variable">TEXT_SPEED</param>
+                                                    <param id="1" name="Value">0.35</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="4141806833292777" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}13</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="5539621663431671" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3195617417478266">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="9963896846713395" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="2109117436358262" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="2589495381581143" type="System">
+                                                    <param id="0" name="Variable">TEXT_SPEED</param>
+                                                    <param id="1" name="Value">0.035</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="5240261496151126" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}14</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="6348067019917816" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">anim</param>
+                                                    <param id="1" name="Value">&quot;action_&quot; &amp; c_mobbox.dir</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="9318066109499842" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>&quot;Received Dynamite&quot;</comment>
+                                        <event-block sid="3461275653629007">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="6887224373223881" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="3455870033930096" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="9499834456027265" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0{###}45{###}11</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="8711363577667772">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="88187917348105" type="System">
+                                                            <param id="0" name="Name">&quot;check_satchel&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">9 + g_gamedata.At(0,0,26)*2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="2290570087307886">
+                                                            <conditions>
+                                                                <condition id="2" name="Compare at XYZ" sid="9846368775491048" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Comparison">0</param>
+                                                                    <param id="4" name="Value">65536</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set at XYZ" sid="9589212594580934" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Value">11</param>
+                                                                </action>
+                                                                <action id="-24" name="Stop loop" sid="7243360260149978" type="System" />
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="5213682024089706">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="7987670715718976" type="System">
+                                                            <param id="0" name="Name">&quot;check_satchel&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">9 + g_gamedata.At(0,0,26)*2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="260625479316081">
+                                                            <conditions>
+                                                                <condition id="2" name="Compare at XYZ" sid="2980151710143431" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Comparison">0</param>
+                                                                    <param id="4" name="Value">65536</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set at XYZ" sid="2021718616271239" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Value">11</param>
+                                                                </action>
+                                                                <action id="-24" name="Stop loop" sid="6513580097324185" type="System" />
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="4235526937342959">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="5272461166308286" type="System">
+                                                            <param id="0" name="Name">&quot;check_satchel&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">9 + g_gamedata.At(0,0,26)*2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="9130330263813582">
+                                                            <conditions>
+                                                                <condition id="2" name="Compare at XYZ" sid="9346111005709671" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Comparison">0</param>
+                                                                    <param id="4" name="Value">65536</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set at XYZ" sid="4715949337351204" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Value">11</param>
+                                                                </action>
+                                                                <action id="-24" name="Stop loop" sid="6704582820716813" type="System" />
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="3065620483866859">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="8163502919395076" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="8021759340181519" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">state</param>
+                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="7557486171409931" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="4" name="Set at XYZ" sid="7809409703325793" type="g_gamedata">
+                                                            <param id="0" name="X">0</param>
+                                                            <param id="1" name="Y">1</param>
+                                                            <param id="2" name="Z">0</param>
+                                                            <param id="3" name="Value">4</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block collapsed="1" sid="6421483090410148">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3505903458272469" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0.5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="8249307015975264">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6401777920727458" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="5088310375902704">
+                                                    <conditions>
+                                                        <condition behavior="8Dir" id="0" name="Is moving" sid="4360031705001912" type="c_mobbox" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="8946238185154108" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">round(c_mobbox.8Dir.MovingAngle / 90) * 90</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <comment>If the angle is negative (Construct 2 uses -90 instead of 270), we add 360 in order to pick the proper animation.</comment>
+                                                        <event-block sid="8149057709891541">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="4093892669270133" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="5728943500889496" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="2161045257882374">
+                                                            <conditions />
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="5009732712828317" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;walk_&quot; &amp; c_mobbox.dir</param>
+                                                                </action>
+                                                                <action behavior="8Dir" id="4" name="Set max speed" sid="8775845173525766" type="c_mobbox">
+                                                                    <param id="0" name="Max Speed">64</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="3170356075055022">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="1569734095032704" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">path</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">-1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="9095429472172811">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="5249146140802686" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="2512783793430429" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="5641594599889537" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;idle_0&quot;</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="4216668981224413" type="ui_font0">
+                                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block collapsed="1" sid="4749201401920988">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7671663083459248" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="2949955014149547">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2855244562160216" type="MOB">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="6317587870033745">
+                                                    <conditions>
+                                                        <condition id="3" name="Compare frame" sid="817894677251882" type="MOB">
+                                                            <param id="0" name="Comparison">4</param>
+                                                            <param id="1" name="Number">0</param>
+                                                        </condition>
+                                                        <condition id="3" name="Compare frame" sid="3015071903521074" type="MOB">
+                                                            <param id="0" name="Comparison">5</param>
+                                                            <param id="1" name="Number">MOB.AnimationFrameCount - 1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="8721844306231223" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="9701556787973791" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">6</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9457029153362889">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4361197277668215" type="c_mobbox">
+                            <param id="0" name="Instance variable">sprID</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="591239057395161" type="MOB">
+                            <param id="0" name="Instance variable">sprID</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Set object time scale" sid="4858896387906384" type="System">
+                            <param id="0" name="Object">c_mobbox</param>
+                            <param id="1" name="Time scale">1</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="8622669974546619" type="System">
+                            <param id="0" name="Object">MOB</param>
+                            <param id="1" name="Time scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>If the Player uses all the dynamite, Zed restocks.</comment>
+        <event-block collapsed="1" sid="5153045294903116">
+            <conditions>
+                <condition id="2" name="Compare at XYZ" sid="4466215904643791" type="g_gamedata">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Comparison">0</param>
+                    <param id="4" name="Value">4</param>
+                </condition>
+                <condition id="-17" name="Compare opacity" sid="4400261002998269" type="System">
+                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9645004168952233">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5349738344656622" type="o_rock">
+                            <param id="0" name="Instance variable">break</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="9849124534583331" type="System">
+                            <param id="0" name="First value">o_rock.PickedCount</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2262421842922327">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7900491397961709" type="c_mobbox">
+                                    <param id="0" name="Instance variable">sprID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="8014769725080302" type="c_mobbox">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;i_dynamite&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="6614766102663788" type="System">
+                                    <param id="0" name="First value">o_dynamite.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="8872614593599154" type="System">
+                                    <param id="0" name="First value">fx_exp.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="dynamite" sid="5683097680072783" static="0" type="number">0</variable>
+                                <event-block sid="7722834809914316">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="5603547487373698" type="System">
+                                            <param id="0" name="Name">&quot;check_satchel&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">9 + g_gamedata.At(0,0,26)*2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="6226802357055377" type="System">
+                                            <param id="0" name="Variable">dynamite</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4437857971404512">
+                                            <conditions>
+                                                <condition id="2" name="Compare at XYZ" sid="3595112443186216" type="g_gamedata">
+                                                    <param id="0" name="X">0</param>
+                                                    <param id="1" name="Y">3</param>
+                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                    <param id="3" name="Comparison">0</param>
+                                                    <param id="4" name="Value">11</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="2389491117002311" type="System">
+                                                    <param id="0" name="Variable">dynamite</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-24" name="Stop loop" sid="5198449153845609" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="4355668990323109">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6333494522087063" type="System">
+                                            <param id="0" name="Variable">dynamite</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-19" name="Pick all" sid="5183746489629107" type="System">
+                                            <param id="0" name="Object">c_mobbox</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="3469687735836775">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="5097763957020123" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="4822319746048404" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;idle&quot;</param>
+                                                </condition>
+                                                <condition id="-4" name="Trigger once while true" sid="8970901265209194" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="1537765627438409" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">path</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="151200064530917" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Value">&quot;scripted&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4607651535677297">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9419315563906675" type="c_mobbox">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;scripted&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="488469283348419">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3251699392125041" type="c_mobbox">
+                                    <param id="0" name="Instance variable">sprID</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="1159709094257528" type="MOB">
+                                    <param id="0" name="Instance variable">sprID</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-14" name="Set object time scale" sid="1630317725092267" type="System">
+                                    <param id="0" name="Object">c_mobbox</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="7570873254534123" type="System">
+                                    <param id="0" name="Object">MOB</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8798248845765189">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7433205786517997" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;message&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="47096991573199">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="60677106596977" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9975203448457968" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="5709588901930042" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9784309765180009">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3841124973026433" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block collapsed="1" sid="8676166397137187">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2011723357320492" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="6850931076075003" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">2{###}choose(15, 16, 17)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="8768864772752921" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="4372367389782832">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="6569611494839959" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="5823236075001207" type="MOB">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="5081897031345998" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="7406705987947159">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="9858966363460801" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="2403005772977935" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="7186642396805976">
+                                                            <conditions />
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="9149450302350702" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;action_&quot; &amp; c_mobbox.dir</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="6136189837272377">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="6199649676997102" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="2719524321887998" type="MOB">
+                                                            <param id="0" name="Instance variable">sprID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="5577069171267215" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">dir</param>
+                                                            <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="3489759145986948">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="6192329397909844" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="2231939329977203" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="9337030266505323">
+                                                            <conditions />
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="7246398224704224" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">anim</param>
+                                                                    <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>&quot;Received Dynamite&quot;</comment>
+                                        <event-block sid="73940752766785">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="9793697263590593" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="80100533879858" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1809073705161575" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0{###}45{###}11</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="4622330845729184" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="7641681930409521">
+                                                    <conditions>
+                                                        <condition id="-10" name="For" sid="5243037703953219" type="System">
+                                                            <param id="0" name="Name">&quot;check_satchel&quot;</param>
+                                                            <param id="1" name="Start index">1</param>
+                                                            <param id="2" name="End index">9 + g_gamedata.At(0,0,26)*2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="5280915969461014">
+                                                            <conditions>
+                                                                <condition id="2" name="Compare at XYZ" sid="6784678467465288" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Comparison">0</param>
+                                                                    <param id="4" name="Value">65536</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set at XYZ" sid="7658914800817432" type="g_gamedata">
+                                                                    <param id="0" name="X">0</param>
+                                                                    <param id="1" name="Y">3</param>
+                                                                    <param id="2" name="Z">loopindex(&quot;check_satchel&quot;)</param>
+                                                                    <param id="3" name="Value">11</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="9187900126230235">
+                                                                    <conditions>
+                                                                        <condition id="-7" name="Compare instance variable" sid="9136619141524141" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">sprID</param>
+                                                                            <param id="1" name="Comparison">3</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="4158699589376074" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">state</param>
+                                                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set at XYZ" sid="9158988815771995" type="g_gamedata">
+                                                                            <param id="0" name="X">0</param>
+                                                                            <param id="1" name="Y">1</param>
+                                                                            <param id="2" name="Z">0</param>
+                                                                            <param id="3" name="Value">4</param>
+                                                                        </action>
+                                                                        <action id="-24" name="Stop loop" sid="1316776189831248" type="System" />
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="9094971596364192">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5294020840599356" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="5815695757168897">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="782469232939497" type="MOB">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="8164981604167958" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="6141669190654776">
+                                                    <conditions>
+                                                        <condition id="4" name="On finished" sid="5272727290168293" type="MOB">
+                                                            <param id="0" name="Animation">&quot;action_&quot; &amp; c_mobbox.dir</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="395525955337048" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="330991046010497" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4291603016516028">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8194701551780999" type="System">
+                            <param id="0" name="First value">o_rock.Count</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set at XYZ" sid="966719900293188" type="g_gamedata">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Value">4.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Zed comments on the lack of a cave in.</comment>
+        <event-block collapsed="1" sid="1487710008084454">
+            <conditions>
+                <condition id="2" name="Compare at XYZ" sid="5001646276568133" type="g_gamedata">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Comparison">0</param>
+                    <param id="4" name="Value">4.1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8062841838810765">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6930160446551861" type="c_mobbox">
+                            <param id="0" name="Instance variable">sprID</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="3573433778842796" type="c_mobbox">
+                            <param id="0" name="Instance variable">run</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2992161971864572" type="c_mobbox">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Value">&quot;scripted&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1144187941665788">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6449823056185763" type="c_mobbox">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;scripted&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7806172565377146">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6046883416726233" type="c_mobbox">
+                                    <param id="0" name="Instance variable">sprID</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6301644956080781" type="MOB">
+                                    <param id="0" name="Instance variable">sprID</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-14" name="Set object time scale" sid="7333304164955601" type="System">
+                                    <param id="0" name="Object">c_mobbox</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="8816479762452331" type="System">
+                                    <param id="0" name="Object">MOB</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6248134826920124">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6185975560735987" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;message&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="549577970804322">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="6948270200667859" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="7447589884436661" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3851293804290529" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6639271114050743">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2419102323152635" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="8485020618834459">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="8147112970508157" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block collapsed="1" sid="3077163019595786">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="4502549559625032" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="7086131985236201">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="7091818654823497" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-16" name="Wait" sid="2203672311262024" type="System">
+                                                                    <param id="0" name="Seconds">0.5</param>
+                                                                </action>
+                                                                <action id="0" name="Call function" sid="876249738520313" type="g_function">
+                                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">2{###}18</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="1271440110307439" type="ui_font0">
+                                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="3269177033471265">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="3417510672947796" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="6712936318826098" type="MOB">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-16" name="Wait" sid="2202115693842646" type="System">
+                                                                    <param id="0" name="Seconds">0.5</param>
+                                                                </action>
+                                                                <action id="-10" name="Set value" sid="9762301122832243" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="6064454309189899">
+                                                                    <conditions>
+                                                                        <condition id="-7" name="Compare instance variable" sid="326710059572594" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Comparison">2</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="5019991634019684" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="7966281979305414">
+                                                                    <conditions />
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="1539431242925332" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">anim</param>
+                                                                            <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="2957675076341449">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="3379013517907813" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="3249653908416521" type="MOB">
+                                                                    <param id="0" name="Instance variable">sprID</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="1893261224610292" type="c_mobbox">
+                                                                    <param id="0" name="Instance variable">dir</param>
+                                                                    <param id="1" name="Value">round(angle(c_mobbox.X, c_mobbox.Y, MOB.X, MOB.Y) / 90) * 90</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="2503367586384572">
+                                                                    <conditions>
+                                                                        <condition id="-7" name="Compare instance variable" sid="7603720610527727" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Comparison">2</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="7408006414324923" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">dir</param>
+                                                                            <param id="1" name="Value">c_mobbox.dir + 360</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="155700530829811">
+                                                                    <conditions />
+                                                                    <actions>
+                                                                        <action id="-10" name="Set value" sid="1703988804846639" type="c_mobbox">
+                                                                            <param id="0" name="Instance variable">anim</param>
+                                                                            <param id="1" name="Value">&quot;idle_&quot; &amp; c_mobbox.dir</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="830514769524493">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="2488223312932569" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="9644344891567425" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="8334124174269646" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">1.5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="6002617549564403">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6755618456731266" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1.5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1131277905731477">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7115984868369476" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="8866287821339362" type="MOB">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="4658084076976664" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">dir</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="930521562063406" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">anim</param>
+                                                    <param id="1" name="Value">&quot;e_wink&quot;</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="5288292712552313">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="1493180768892938" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;e_wink&quot;</param>
+                                                        </condition>
+                                                        <condition id="-4" name="Trigger once while true" sid="4168762526936776" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Wait" sid="410548991097707" type="System">
+                                                            <param id="0" name="Seconds">2.0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="6086328241032134" type="ui_font0">
+                                                            <param id="0" name="Instance variable">ui_var</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="8338781642028821" type="c_mobbox">
+                                                            <param id="0" name="Instance variable">anim</param>
+                                                            <param id="1" name="Value">&quot;idle_0&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="5521436688640849">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6880877135322761" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="5400692293687439" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="4" name="Set at XYZ" sid="9550245294231888" type="g_gamedata">
+                                            <param id="0" name="X">0</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Z">0</param>
+                                            <param id="3" name="Value">4.2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="3605982538463848">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="3599426815496776" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">sprID</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="4291853453118932" type="c_mobbox">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Value">&quot;idle&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

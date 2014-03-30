@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Godstone';
+    font-weight: normal;
+    font-style: normal;
+    src: local('godstone.woff'), url('godstone.woff') format('woff');
+}

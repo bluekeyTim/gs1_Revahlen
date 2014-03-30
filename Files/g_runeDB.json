@@ -1,0 +1,151 @@
+{
+	"c2array":true,
+	"size":
+	[
+		2,
+		15,
+		6
+	],
+	"data":
+	[
+		[
+			["Fire",0],
+			["Water",1],
+			["Static",2],
+			["Ice",3],
+			["Earth",4],
+			["Wind",5],
+			["Venom",6],
+			["Gravity",7],
+			["Shadow",8],
+			["Star",9],
+			["Heart",10],
+			["Shell",11],
+			["Energy",12],
+			["Soul",13],
+			["Destruction",14]
+		],
+		[
+			[
+				"Flamethrower",
+				"Emit a stream of fire for a few seconds.",
+				"spell_fire0",
+				3,
+				2,
+				"F"
+			],
+			[
+				"Wave",
+				"A rush of water that slows down targets.",
+				"spell_water0",
+				3,
+				1,
+				"W"
+			],
+			[
+				"Bolt",
+				"Instantaneous electrical damage.",
+				"spell_static0",
+				5,
+				3,
+				"Z"
+			],
+			[
+				"Freeze Ray",
+				"A blast of cold vapor that slows targets.",
+				"spell_ice0",
+				5,
+				2,
+				"I"
+			],
+			[
+				"Overgrowth",
+				"Vines emerge from the earth and grip the target.",
+				"spell_earth0",
+				7,
+				3,
+				"E"
+			],
+			[
+				"Whirlwind",
+				"Spawn a mini cyclone that confuses targets.",
+				"spell_wind0",
+				7,
+				3,
+				"A"
+			],
+			[
+				"Toxic Gas",
+				"A venomous cloud that poisons targets.",
+				"spell_venom0",
+				3,
+				1,
+				"P"
+			],
+			[
+				"Crush",
+				"Heavier targets succumb to the forces of gravity.",
+				"spell_grav0",
+				10,
+				4,
+				"G"
+			],
+			[
+				"Chaos",
+				"Roll the dice.",
+				"spell_shadow0",
+				10,
+				1,
+				"S"
+			],
+			[
+				"Star Shower",
+				"Summon meteors to deal light based damage.",
+				"spell_star0",
+				15,
+				3,
+				"L"
+			],
+			[
+				"Heal",
+				"A restorative cloud that influences regrowth.",
+				"spell_heart0",
+				5,
+				5,
+				"+"
+			],
+			[
+				"Shield",
+				"Envelop the target in a protective shell.",
+				"spell_shell0",
+				8,
+				30,
+				"+"
+			],
+			[
+				"Empower",
+				"Energize the target's offensive ability.",
+				"spell_energy0",
+				8,
+				30,
+				"+"
+			],
+			[
+				"Revival",
+				"Remove an ally's wounds.",
+				"spell_soul0",
+				10,
+				25,
+				"+"
+			],
+			[
+				"Destruction",
+				"Annihilate all nearby targets.",
+				"spell_dest0",
+				25,
+				25,
+				"1"
+			]
+		]
+	]
+}

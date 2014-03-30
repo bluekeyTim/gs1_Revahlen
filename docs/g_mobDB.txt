@@ -1,0 +1,46 @@
+G_MOBDB
+______________________________________________________________________________________
+
+0 : Name		(str)
+1 : Faction		(int)
+2 : HPmax		(int)
+3 : Attack Power	(int)
+
+4 : Element Attack	(int)	// -1 = non elemental
+5 : Element Resist
+6 : Element Immune
+7 : Element Absorb
+8 : Element Weakness
+
+9 : Money Drop		(int)
+10: Loot Drop			// itemID
+11: Loot Drop Type		// 0 = normal, 1 = key, 2 = ammo
+12: Loot Drop Chance		// 1 = always, 2 = 1 in 2, 3 = 1 in 3, 4 = 1 in 4, etc...
+
+13: AI Type		(int)
+14: AI Range		(int)
+15: Soundbank		(str)	// prefix for sound effects
+16: Mob Box Size	(int)
+17: Can Run		(int)	// 0 = false, 1 = true
+18: Walk Speed		(int)
+19: Run Speed		(int)
+20: Corpse Stay		(int)	// 0 = false, 1 = true
+
+21-?? : Attack 0/1/2...	(str)	// Attack information using "|" as tokens
+
+	FORMAT: "Type|Power|Element|Animation|Frame|SFX|Projectile|Flash|Size|Speed|Aimed"
+
+		0  Type		// 0 = ranged, 1 = melee
+		1  Power	// overrides default Attack Power
+		2  Element	// overrides default Element Attack
+		3  Animation	// MOB animation to display
+		4  Frame	// animation frame to spawn attack object
+		5  Sound FX	// sound file to play
+		6  Projectile	// if ranged; projectile animation name, NULL = no projectile
+		7  Flash	// attack fx, muzzle flash
+		8  Size		// if melee; size of attack box
+		9  Speed	// if ranged; projectile speed
+		10 Aimed	// if ranged; 0 = MOB direction, 1 = angled towards target, 2 = homing
+		11 Persist	// 0 if false, 1 if true, causes projectile to survive collision with MOB
+
+______________________________________________________________________________________

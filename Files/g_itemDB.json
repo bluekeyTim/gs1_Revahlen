@@ -1,0 +1,119 @@
+{
+	"c2array":true,
+	"size": 
+	[
+		2,
+		20,
+		8
+	],
+	"data": 
+	[
+		[
+			[
+				"Upgrade Kit",
+				"Allows Droum to upgrade equipment",
+				"NULL",
+				2500,
+				0
+			],
+			[
+				"Bandage",
+				"Fixes minor wounds",
+				"item_potion0",
+				25,
+				1
+			],
+			[
+				"Stitch Kit",
+				"Fixes a moderate amount of wounds",
+				"item_potion1",
+				75,
+				1
+			],
+			[
+				"Medbag",
+				"Fixes most wounds",
+				"item_potion2",
+				250,
+				1
+			],
+			[
+				"First Aid Kit",
+				"Revives wounded ally",
+				"item_revive",
+				300,
+				1
+			],
+			[
+				"RC Battery",
+				"Recharges rune caster",
+				"item_rc0",
+				300,
+				0
+			],
+			[
+				"RC Fuse",
+				"Repairs shocked rune caster",
+				"item_rc1",
+				150,
+				0
+			],
+			[
+				"Antidote",
+				"Cures poison",
+				"item_antidote",
+				100,
+				1
+			],
+			[
+				"Candy Bar",
+				"Restores speed",
+				"item_candy",
+				50,
+				1
+			],
+			[
+				"Relaxant",
+				"Cures paralysis",
+				"item_relaxant",
+				100,
+				1
+			],
+			[
+				"Tonic",
+				"Removes all status ailments",
+				"item_tonic",
+				500,
+				1
+			],
+			[
+				"Dynamite",
+				"Timed explosive device",
+				"item_dynamite",
+				1500,
+				0
+			],
+			[
+				"Scribbled Note",
+				"A clue to the cave maze",
+				"item_q0_cavenote",
+				0,
+				0
+			],
+			[
+				"Soup",
+				"Warm and hearty homemade meal",
+				"item_soup",
+				10,
+				0
+			],
+			[
+				"Strange Artifact",
+				"Maybe Droum can figure it out?",
+				"item_q0_artifact0",
+				0,
+				0
+			]
+		]
+	]
+}

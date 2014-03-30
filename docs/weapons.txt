@@ -1,0 +1,49 @@
+G_WEPDB ARRAY
+
+==================================================================================================
+
+0 : Weapon Name
+1 : Character
+2 : Description
+3 : Attack Power
+4 : Element
+5 : Cost
+6 : Sprite Name
+
+____________________________________________________________________________
+
+0 : -Empty-
+1 : Derringer
+2 : Wheellock
+3 : Pepperbox
+4 : Lancaster
+5 : Flintlock
+6 : Percussion Pistol
+7 : Six Gun
+8 : Dragon (fire)
+9 : Mac an Luin (water)
+9 : Caladbolg (earth)
+11: Peacemaker
+12: Regal Eagle (Zed only)
+13: Quicksilver (Max only)
+
+14: Arbalest
+15: Stonebow
+16: Firelance (fire)
+17: Arquebus
+18: Blunderbuss 
+20: Snaphance
+20: Enfield
+21: Dragoon (fire)
+22: Gandiva (lightning)
+22: Answerer (wind)
+
+23: Cutlass
+23: Falchion
+24: Sabre
+22: Khanda
+25: Epee
+25: Rapier
+27: Flamberge (fire)
+26: Mameluke
+28: Solais (light)

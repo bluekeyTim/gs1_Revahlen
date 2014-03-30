@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>WorldMap</name>
+    <events>
+        <event-block sid="527407849011798">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="8266952680347823" type="e_world_ocean">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">-32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="5585097930819466" type="e_world_ocean">
+                    <param id="0" name="X">-128</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6547186225631451">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="7817606778953888" type="e_world_ocean">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">-32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="455054689658129" type="e_world_ocean">
+                    <param id="0" name="Y">-112</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7517217111976514">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6988682531312745" type="System">
+                    <param id="0" name="Interval (seconds)">0.25</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="2207662470316525" type="e_world_ocean">
+                    <param id="0" name="X">Self.X + 1</param>
+                    <param id="1" name="Y">Self.Y + 1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4274606027596761" type="ui_font0">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="5817195097766886" type="ui_font0">
+                    <param id="0" name="Text">&quot;Ocean X : &quot; &amp; round(e_world_ocean.X) &amp;newline&amp;&#x0D;&#x0A;&quot;Ocean Y : &quot; &amp; round(e_world_ocean.Y)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
