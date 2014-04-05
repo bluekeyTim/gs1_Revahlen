@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>WorldMap</name>
     <events>
+        <include>MapCommon</include>
         <event-block sid="527407849011798">
             <conditions>
                 <condition id="-1" name="Compare X" sid="8266952680347823" type="e_world_ocean">
@@ -37,16 +38,290 @@
             </conditions>
             <actions>
                 <action id="-3" name="Set position" sid="2207662470316525" type="e_world_ocean">
-                    <param id="0" name="X">Self.X + 1</param>
-                    <param id="1" name="Y">Self.Y + 1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="4274606027596761" type="ui_font0">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="0" name="Set text" sid="5817195097766886" type="ui_font0">
-                    <param id="0" name="Text">&quot;Ocean X : &quot; &amp; round(e_world_ocean.X) &amp;newline&amp;&#x0D;&#x0A;&quot;Ocean Y : &quot; &amp; round(e_world_ocean.Y)</param>
+                    <param id="0" name="X">Self.X - 1</param>
+                    <param id="1" name="Y">Self.Y</param>
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="4673033292953927" title="Intro Sequence">
+            <sub-events>
+                <event-block sid="8123763174970724">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="7381658427947002" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5032318227405717" type="System">
+                            <param id="0" name="Variable">FADE</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="1024794335952224" type="System">
+                            <param id="0" name="Layer">&quot;fade2&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="8507297487241555" type="System">
+                            <param id="0" name="Layer">&quot;fade2&quot;</param>
+                            <param id="1" name="Opacity">100</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2275287579054017" type="UI_0">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4919066993283613" type="UI_1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="4324844106654527" type="UI_2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3515071206194431" type="UI_3">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9232059260735466" type="UI_3">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="33" name="Stop all" sid="9811874212938168" type="g_audio" />
+                        <action id="-9" name="Set value" sid="1282840426059457" type="System">
+                            <param id="0" name="Variable">MENU</param>
+                            <param id="1" name="Value">-2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5085656081458331" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="7869153491195395" type="g_function">
+                            <param id="0" name="Name">&quot;hud_hide&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9145768889383514" type="System">
+                            <param id="0" name="Variable">FADE</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6398396482456085" type="System">
+                            <param id="0" name="Variable">TEXT_SPEED</param>
+                            <param id="1" name="Value">0.07</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6085799118978194">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="7242322572865878" type="System">
+                            <param id="0" name="Layer">&quot;fade&quot;</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5129164699029107">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5631643757502034" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;message&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2346257939415895">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="8558361990603809" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="4246250810166637" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="5964793013385354" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="458929332364648">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9854487024424803" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_string</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="5640724143812421">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7497228528096723" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7790249630754508" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0{###}70</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="5582491455568513" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3152794773287104">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="1546872156064377" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="6502207031593345" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1161121089046148" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0{###}71</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="9461946935049005" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="1983317355851924">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="3672087083433568" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="7506705831152308" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="4540349797452805" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0{###}72</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="3826540350646028" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4599023418926955">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="8601331818139135" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="9205226540510944" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="6833910004807248" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0{###}73</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="2387510683911451" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="6693900161880786">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="9559355766683969" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="5640689151031955" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="3615961024588966" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0{###}74</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="974811995120118" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Value">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8315040663196848">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="2531105147073641" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="8964400618226096" type="ui_font0">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="8265150562222165" type="g_function">
+                                                    <param id="0" name="Name">&quot;ui_msg_clear&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="8735616200136239" type="System">
+                                                    <param id="0" name="Variable">FADE</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4610330669861586">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="2195998533127314" type="System">
+                            <param id="0" name="Layer">&quot;fade&quot;</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1277585812315973">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="583919106338248" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;message&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2957710140490175" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_var</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="3452629891395913" type="ui_font0">
+                                    <param id="0" name="Instance variable">ui_string</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="796667126211722">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="506320932466402" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="3088118458181518" type="ui_font0">
+                                            <param id="0" name="Instance variable">ui_var</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8437680945683487" type="System">
+                                            <param id="0" name="Variable">TEXT_SPEED</param>
+                                            <param id="1" name="Value">0.035</param>
+                                        </action>
+                                        <action id="-25" name="Go to layout (by name)" sid="222138578622255" type="System">
+                                            <param id="0" name="Layout">&quot;intro_sequence2&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

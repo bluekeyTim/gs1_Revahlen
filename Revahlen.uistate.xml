@@ -11,8 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout>startup</layout>
-        <layout active="1">worldmap</layout>
-        <event-sheet>WorldMap</event-sheet>
+        <layout>worldmap</layout>
+        <event-sheet active="1">WorldMap</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
