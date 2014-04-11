@@ -8,7 +8,7 @@
     <author-website></author-website>
     <app-id></app-id>
     <unique-id>23sps4borxlqr</unique-id>
-    <saved-with-version>16500</saved-with-version>
+    <saved-with-version>16600</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
@@ -11032,7 +11032,7 @@
             </members>
         </family>
     </families>
-    <layout-folder expanded="1">
+    <layout-folder expanded="0">
         <layout-folder expanded="0" name="debug">
             <layout>template.xml</layout>
             <layout>debug.xml</layout>
@@ -11057,7 +11057,7 @@
         <layout>worldmap.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
-        <event-folder expanded="0" name="intro">
+        <event-folder expanded="1" name="intro">
             <event-sheet>intro_6.xml</event-sheet>
             <event-sheet>intro_2.xml</event-sheet>
             <event-sheet>intro_0.xml</event-sheet>
@@ -11067,7 +11067,6 @@
             <event-sheet>intro_7.xml</event-sheet>
             <event-sheet>intro_8.xml</event-sheet>
             <event-sheet>intro_sequence2.xml</event-sheet>
-            <event-sheet>intro_sequence1.xml</event-sheet>
         </event-folder>
         <event-folder expanded="0" name="debug">
             <event-sheet>debug.xml</event-sheet>
@@ -11120,7 +11119,7 @@
         </global-instance>
     </global-instances>
     <sounds-folder expanded="0">
-        <file-folder expanded="0" name="mus">
+        <file-folder expanded="1" name="mus">
             <file name="mus_chase0.m4a" />
             <file name="mus_chase0.ogg" />
             <file name="mus_chase0.wav" />
@@ -11163,6 +11162,12 @@
             <file name="mus_zed0_intro.m4a" />
             <file name="mus_zed0_intro.ogg" />
             <file name="mus_zed0_intro.wav" />
+            <file name="mus_zed1.m4a" />
+            <file name="mus_zed1.ogg" />
+            <file name="mus_zed1.wav" />
+            <file name="mus_zed1_intro.m4a" />
+            <file name="mus_zed1_intro.ogg" />
+            <file name="mus_zed1_intro.wav" />
         </file-folder>
         <file name="sfx_gun0.m4a" />
         <file name="sfx_gun0.ogg" />
@@ -11170,7 +11175,7 @@
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="0">
-        <file-folder expanded="1" name="Icons">
+        <file-folder expanded="0" name="Icons">
             <file name="icon-16.png" />
             <file name="icon-32.png" />
             <file name="icon-114.png" />
