@@ -1719,7 +1719,12 @@
                                             <param id="2" name="Opacity">100</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9840246255598889" type="c_mobbox">
+                                            <param id="0" name="Instance variable">state_var</param>
+                                            <param id="1" name="Value">c_mobbox.state_var - 1*dt</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
                                         <event-block sid="5487813814418994">
                                             <conditions>
@@ -1729,12 +1734,7 @@
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="-10" name="Set value" sid="9840246255598889" type="c_mobbox">
-                                                    <param id="0" name="Instance variable">state_var</param>
-                                                    <param id="1" name="Value">c_mobbox.state_var - 1*dt</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
                                             <sub-events>
                                                 <event-block sid="1821869866394211">
                                                     <conditions>
@@ -1792,12 +1792,7 @@
                                             <conditions>
                                                 <condition id="-22" name="Else" sid="3335766268717594" type="System" />
                                             </conditions>
-                                            <actions>
-                                                <action id="-10" name="Set value" sid="4689402970879259" type="c_mobbox">
-                                                    <param id="0" name="Instance variable">state_var</param>
-                                                    <param id="1" name="Value">c_mobbox.state_var - 1*dt</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
                                             <sub-events>
                                                 <event-block sid="490365343461175">
                                                     <conditions>
@@ -1823,7 +1818,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="8671694327011346" title="Misc Systems">
+        <event-group collapsed="1" description="" sid="8671694327011346" title="Misc Systems">
             <sub-events>
                 <event-group collapsed="1" description="" sid="8412243526900553" title="MOB Spawner">
                     <sub-events>
@@ -3023,7 +3018,7 @@
                                     <param id="0" name="Color">rgb(255, 255, 0)</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2577603336937066" type="ui_text">
-                                    <param id="0" name="Text">&quot;Debug Mode&quot; &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Quest Progress : &quot; &amp; g_gamedata.At(0,1,0) &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Message Var : &quot; &amp; ui_font0.ui_var &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Map : &quot; &amp; LayoutName &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Player State : &quot; &amp; c_mobbox.state</param>
+                                    <param id="0" name="Text">&quot;Debug Mode&quot; &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Quest Progress : &quot; &amp; g_gamedata.At(0,1,0) &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Message Var : &quot; &amp; ui_font0.ui_var &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Map : &quot; &amp; LayoutName &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Player State : &quot; &amp; c_mobbox.state &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Camera Position : &quot; &amp; g_magicam.GetX(g_magicam.GetActiveCamera) &amp; &quot; , &quot; &amp; g_magicam.GetY(g_magicam.GetActiveCamera) &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Camera Transition : &quot; &amp; g_magicam.MovementTransitionProgress(g_magicam.GetActiveCamera)</param>
                                 </action>
                             </actions>
                         </event-block>

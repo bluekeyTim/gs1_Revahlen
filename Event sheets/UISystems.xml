@@ -687,7 +687,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="1225" title="UI Message System">
+        <event-group collapsed="1" description="" sid="1225" title="UI Message System">
             <sub-events>
                 <comment>In order to bring up our Message Window we call the function &quot;ui_msg&quot;. It uses Parameters 0 and 1 to pull the Y and Z coordinates respectively from G_DIALOG array with the X coordinate being pulled by the Language setting (g_gamedata.At(0,0,6), tokenized into 9 variables:&#x0D;&#x0A;&#x0D;&#x0A;token 0 : Pause mode type, 2 will be used for most dialogue, 3 will be unskippable, 4 will be skippable but not clearable, 5 will be both unskippable and unclearable, 6 will be decision dialogue&#x0D;&#x0A;token 1 : &gt;=message window height, -1 = window invisible&#x0D;&#x0A;token 2 : write mode, 0 = typewriter, 1 = instantaneous&#x0D;&#x0A;token 3 : timer toggle&#x0D;&#x0A;token 4 : time text stays on the screen&#x0D;&#x0A;token 5 : portrait animation, typically by character, NULL for invisible&#x0D;&#x0A;token 6 : portrait frame, typically to differentiate emotion&#x0D;&#x0A;token 7 : text alignment, 0 = left, 1 = center, 2 = right&#x0D;&#x0A;token 8 : text to display, this gets sent to the ui_font0 object&apos;s &quot;ui_string&quot; variable&#x0D;&#x0A;&#x0D;&#x0A;Parameter 2 is an optional string added on to the end of the token8_Text string.&#x0D;&#x0A;&#x0D;&#x0A;Keep in mind, text with the portrait visible can only fit 23 characters per line, and text without the portrait can only fit 30 characters per line. Each message has a 5 line limit.</comment>
                 <event-block collapsed="1" sid="1226">
@@ -13673,7 +13673,7 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <event-block sid="3329401414109512">
+                                                <event-block collapsed="1" sid="3329401414109512">
                                                     <conditions>
                                                         <condition id="-4" name="Trigger once while true" sid="5160447588132264" type="System" />
                                                     </conditions>

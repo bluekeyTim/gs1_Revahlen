@@ -12,6 +12,14 @@
                     <param id="0" name="Variable">FADE</param>
                     <param id="1" name="Value">-1</param>
                 </action>
+                <action id="-9" name="Set value" sid="1250638731463271" type="System">
+                    <param id="0" name="Variable">MUSIC_VOLUME</param>
+                    <param id="1" name="Value">OPTION_MUSIC_VOLUME</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="553311448031206" type="g_audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">&quot;mus_cave0&quot;</param>
+                </action>
                 <action id="9" name="Preload (by name)" sid="5529166933470018" type="g_audio">
                     <param id="0" name="Folder">0</param>
                     <param id="1" name="Audio file name">&quot;mus_introtheme&quot;</param>
@@ -30,10 +38,6 @@
                     <param id="3" name="Loop">0</param>
                     <param id="4" name="Volume">20*log10(MUSIC_VOLUME/100)</param>
                     <param id="2" name="Tag (optional)">&quot;music&quot;</param>
-                </action>
-                <action id="9" name="Preload (by name)" sid="553311448031206" type="g_audio">
-                    <param id="0" name="Folder">0</param>
-                    <param id="1" name="Audio file name">&quot;mus_cave0&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -68,7 +72,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="7672332703285693" title="Travel FX">
+        <event-group collapsed="1" description="" sid="7672332703285693" title="Travel FX">
             <sub-events>
                 <event-block sid="2463935459671377">
                     <conditions>
@@ -206,7 +210,7 @@
                             <actions>
                                 <action id="-18" name="Set layer opacity" sid="658" type="System">
                                     <param id="0" name="Layer">&quot;fade&quot;</param>
-                                    <param id="1" name="Opacity">max(0, LayerOpacity(&quot;fade&quot;) - 50 * dt)</param>
+                                    <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;) - 50 * dt</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -244,7 +248,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block collapsed="1" sid="5433956311744141">
+                        <event-block sid="5433956311744141">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="1668118198412701" type="ui_font1">
                                     <param id="0" name="Instance variable">ui_fade</param>
@@ -280,6 +284,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
+                                        <comment>Blue Key Games Presents</comment>
                                         <event-block sid="8281171961034309">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="7473548763404" type="ui_font1">
@@ -293,10 +298,11 @@
                                                     <param id="0" name="Scale">1.0</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="2347881064884388" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;BLUE KEY GAMES PRESENTS&quot;</param>
+                                                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 0)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <comment>REVAHLEN</comment>
                                         <event-block sid="7641958415272993">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="1188892297016801" type="ui_font1">
@@ -310,10 +316,11 @@
                                                     <param id="0" name="Scale">2.0</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="3694308141423146" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;REVAHLEN&quot;</param>
+                                                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 2)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <comment>Tim McCabe</comment>
                                         <event-block sid="7638220351050922">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="2426838121430651" type="ui_font1">
@@ -327,10 +334,11 @@
                                                     <param id="0" name="Scale">1.0</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="4755504704985258" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;STORY&quot; &amp;newline&amp; &quot;TOM SURRETTE&quot; &amp;newline&amp; &quot;TIM MCCABE&quot;</param>
+                                                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 75)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <comment>Tom Surrette</comment>
                                         <event-block sid="1074079743360548">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="6551165440584228" type="ui_font1">
@@ -344,10 +352,11 @@
                                                     <param id="0" name="Scale">1.0</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="1115802791580854" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;SCREENPLAY&quot; &amp;newline&amp; &quot;TOM SURRETTE&quot;</param>
+                                                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 76)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <comment>Chris Thompsen</comment>
                                         <event-block sid="8801035566793563">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="7384644721616395" type="ui_font1">
@@ -361,58 +370,7 @@
                                                     <param id="0" name="Scale">1.0</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="7508707695667982" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;MUSIC&quot; &amp;newline&amp; &quot;CHRIS THOMPSEN&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="8713684270306507">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="2069172102875264" type="ui_font1">
-                                                    <param id="0" name="Instance variable">ui_var</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">6</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="2" name="Set scale" sid="3171403144073739" type="ui_font1">
-                                                    <param id="0" name="Scale">1.0</param>
-                                                </action>
-                                                <action id="0" name="Set text" sid="371842562584096" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;PROGRAMMING&quot; &amp;newline&amp; &quot;TIM MCCABE&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="2732950123737163">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="4282682938315794" type="ui_font1">
-                                                    <param id="0" name="Instance variable">ui_var</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">7</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="2" name="Set scale" sid="7562440221145157" type="ui_font1">
-                                                    <param id="0" name="Scale">1.0</param>
-                                                </action>
-                                                <action id="0" name="Set text" sid="9663608815538626" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;MAP DESIGN&quot; &amp;newline&amp; &quot;TIM MCCABE&quot; &amp;newline&amp; &quot;KEVIN ANNIS&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="5053923235916428">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="5378531602681884" type="ui_font1">
-                                                    <param id="0" name="Instance variable">ui_var</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">8</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="2" name="Set scale" sid="8974631628171675" type="ui_font1">
-                                                    <param id="0" name="Scale">1.0</param>
-                                                </action>
-                                                <action id="0" name="Set text" sid="5688639067016706" type="ui_font1">
-                                                    <param id="0" name="Text">&quot;PROJECT DIRECTOR&quot; &amp;newline&amp; &quot;TIM MCCABE&quot;</param>
+                                                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 77)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -421,7 +379,7 @@
                                                 <condition id="-7" name="Compare instance variable" sid="5207526840498674" type="ui_font1">
                                                     <param id="0" name="Instance variable">ui_var</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">9</param>
+                                                    <param id="2" name="Value">6</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -441,7 +399,6 @@
                 </event-block>
                 <event-block sid="659">
                     <conditions>
-                        <condition id="-22" name="Else" sid="660" type="System" />
                         <condition id="-14" name="Compare variable" sid="661" type="System">
                             <param id="0" name="Variable">FADE</param>
                             <param id="1" name="Comparison">0</param>
@@ -461,9 +418,20 @@
                             <actions>
                                 <action id="-18" name="Set layer opacity" sid="664" type="System">
                                     <param id="0" name="Layer">&quot;fade&quot;</param>
-                                    <param id="1" name="Opacity">min(100, LayerOpacity(&quot;fade&quot;) + 50 * dt)</param>
+                                    <param id="1" name="Opacity">LayerOpacity(&quot;fade&quot;) + 50 * dt</param>
                                 </action>
-                                <action id="-25" name="Go to layout (by name)" sid="9837051978055052" type="System">
+                            </actions>
+                        </event-block>
+                        <event-block sid="8769755791425012">
+                            <conditions>
+                                <condition id="-17" name="Compare opacity" sid="3490388589283824" type="System">
+                                    <param id="0" name="Layer">&quot;fade&quot;</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Opacity">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="266624435749114" type="System">
                                     <param id="0" name="Layout">&quot;intro_0&quot;</param>
                                 </action>
                             </actions>

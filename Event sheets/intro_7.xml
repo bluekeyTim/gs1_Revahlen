@@ -4,7 +4,7 @@
     <name>intro_7</name>
     <events>
         <include>MapCommon</include>
-        <event-block collapsed="1" sid="1521465549020512">
+        <event-block sid="1521465549020512">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="9234019260282276" type="System" />
             </conditions>
@@ -41,6 +41,14 @@
                         <action id="-9" name="Set value" sid="6934265934387004" type="System">
                             <param id="0" name="Variable">FADE</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7677553582973423" type="e_c_warp">
+                            <param id="0" name="Instance variable">warp_music_change</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8799485953734322" type="e_c_warp">
+                            <param id="0" name="Instance variable">warp_music_name</param>
+                            <param id="1" name="Value">&quot;zed1&quot;</param>
                         </action>
                     </actions>
                     <sub-events>

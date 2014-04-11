@@ -168,7 +168,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="7216257178350039" title="Title Main Menu">
+        <event-group collapsed="1" description="" sid="7216257178350039" title="Title Main Menu">
             <sub-events>
                 <event-block sid="2396721457418369">
                     <conditions>
@@ -578,7 +578,7 @@
                     </sub-events>
                 </event-block>
                 <comment>New Game Start</comment>
-                <event-block collapsed="1" sid="1749794126232218">
+                <event-block sid="1749794126232218">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="3154703465135784" type="System">
                             <param id="0" name="Variable">PAUSE</param>
@@ -744,15 +744,15 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="1489813185041449" type="System">
                                     <param id="0" name="Variable">WARP_X</param>
-                                    <param id="1" name="Value">192</param>
+                                    <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="4876544146555183" type="System">
                                     <param id="0" name="Variable">WARP_Y</param>
-                                    <param id="1" name="Value">224</param>
+                                    <param id="1" name="Value">-1</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="3266599878705498" type="System">
                                     <param id="0" name="Variable">WARP_MAP</param>
-                                    <param id="1" name="Value">&quot;intro_0&quot;</param>
+                                    <param id="1" name="Value">&quot;worldmap&quot;</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="3821233168756718" type="System">
                                     <param id="0" name="Variable">WARP_MUSIC_CHANGE</param>
@@ -760,9 +760,9 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="2871738376074715" type="System">
                                     <param id="0" name="Variable">MUSIC_NAME</param>
-                                    <param id="1" name="Value">&quot;NULL&quot;</param>
+                                    <param id="1" name="Value">&quot;title&quot;</param>
                                 </action>
-                                <action disabled="1" id="9" name="Preload (by name)" sid="3725315678577351" type="g_audio">
+                                <action id="9" name="Preload (by name)" sid="3725315678577351" type="g_audio">
                                     <param id="0" name="Folder">0</param>
                                     <param id="1" name="Audio file name">&quot;mus_&quot; &amp; MUSIC_NAME</param>
                                 </action>
@@ -794,7 +794,7 @@
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
-                                        <condition disabled="1" id="1" name="Preloads complete" sid="2179204792217378" type="g_audio" />
+                                        <condition id="1" name="Preloads complete" sid="2179204792217378" type="g_audio" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
@@ -830,7 +830,7 @@
                                                     <param id="0" name="Text">&quot;&quot;</param>
                                                 </action>
                                                 <action id="-25" name="Go to layout (by name)" sid="8657197985398863" type="System">
-                                                    <param id="0" name="Layout">&quot;intro_sequence1&quot;</param>
+                                                    <param id="0" name="Layout">WARP_MAP</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -953,7 +953,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="6777297274879763" title="Title Options Menu">
+        <event-group description="" sid="6777297274879763" title="Title Options Menu">
             <sub-events>
                 <event-block sid="5438178817438513">
                     <conditions>
@@ -1025,7 +1025,7 @@
                                                 </action>
                                                 <action id="-3" name="Set position" sid="6088612523467953" type="ui_win0">
                                                     <param id="0" name="X">ViewportRight(&quot;menu&quot;)/2 - 112</param>
-                                                    <param id="1" name="Y">8</param>
+                                                    <param id="1" name="Y">4</param>
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="3862609465288958" type="ui_win0">
                                                     <param id="0" name="Visibility">1</param>
@@ -1084,7 +1084,7 @@
                                                 </action>
                                                 <action id="-3" name="Set position" sid="9745454870493408" type="ui_win2">
                                                     <param id="0" name="X">ViewportRight(&quot;menu&quot;)/2 - ui_win2.Width/2</param>
-                                                    <param id="1" name="Y">24</param>
+                                                    <param id="1" name="Y">20</param>
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="556548434714684" type="ui_win2">
                                                     <param id="0" name="Visibility">1</param>
@@ -1128,7 +1128,7 @@
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
-                                        <event-block collapsed="1" sid="2714438014578865">
+                                        <event-block sid="2714438014578865">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="384179326389044" type="ui_win1">
                                                     <param id="0" name="Instance variable">ui_id</param>
@@ -1139,11 +1139,11 @@
                                             <actions>
                                                 <action id="-7" name="Set size" sid="2590474193161622" type="ui_win1">
                                                     <param id="0" name="Width">104</param>
-                                                    <param id="1" name="Height">192</param>
+                                                    <param id="1" name="Height">184</param>
                                                 </action>
                                                 <action id="-3" name="Set position" sid="2745221979678873" type="ui_win1">
                                                     <param id="0" name="X">ViewportRight(&quot;menu&quot;)/2 + 8</param>
-                                                    <param id="1" name="Y">40</param>
+                                                    <param id="1" name="Y">36</param>
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="6151417242466116" type="ui_win1">
                                                     <param id="0" name="Visibility">1</param>
@@ -1171,7 +1171,7 @@
                                                         </action>
                                                         <action id="-3" name="Set position" sid="6106183541343828" type="ui_font0">
                                                             <param id="0" name="X">ui_win1.X + 8</param>
-                                                            <param id="1" name="Y">ui_win1.Y + 4</param>
+                                                            <param id="1" name="Y">ui_win1.Y</param>
                                                         </action>
                                                         <action id="4" name="Set line height" sid="9898881587422599" type="ui_font0">
                                                             <param id="0" name="Line height">8</param>
@@ -1184,7 +1184,7 @@
                                             </sub-events>
                                         </event-block>
                                         <comment>Menu</comment>
-                                        <event-block collapsed="1" sid="9249525548393282">
+                                        <event-block sid="9249525548393282">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="8777611645914504" type="ui_win0">
                                                     <param id="0" name="Instance variable">ui_id</param>
@@ -1195,11 +1195,11 @@
                                             <actions>
                                                 <action id="-7" name="Set size" sid="5705790996988206" type="ui_win0">
                                                     <param id="0" name="Width">120</param>
-                                                    <param id="1" name="Height">192</param>
+                                                    <param id="1" name="Height">184</param>
                                                 </action>
                                                 <action id="-3" name="Set position" sid="5555198271474397" type="ui_win0">
                                                     <param id="0" name="X">ViewportRight(&quot;menu&quot;)/2 - 112</param>
-                                                    <param id="1" name="Y">40</param>
+                                                    <param id="1" name="Y">36</param>
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="6470408970371701" type="ui_win0">
                                                     <param id="0" name="Visibility">1</param>
@@ -1227,7 +1227,7 @@
                                                         </action>
                                                         <action id="-3" name="Set position" sid="1278438919871837" type="ui_font0">
                                                             <param id="0" name="X">ui_win0.X + 16</param>
-                                                            <param id="1" name="Y">ui_win0.Y + 4</param>
+                                                            <param id="1" name="Y">ui_win0.Y</param>
                                                         </action>
                                                         <action id="4" name="Set line height" sid="82084309227239" type="ui_font0">
                                                             <param id="0" name="Line height">8</param>
@@ -1387,7 +1387,7 @@
                                             <actions>
                                                 <action id="-3" name="Set position" sid="322759262900142" type="ui_cursor">
                                                     <param id="0" name="X">ui_win0.X + 8</param>
-                                                    <param id="1" name="Y">ui_win0.Y + 16 + 16*ui_cursor.ui_index0</param>
+                                                    <param id="1" name="Y">ui_win0.Y + 12 + 16*ui_cursor.ui_index0</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -2007,7 +2007,7 @@
                                     </sub-events>
                                 </event-block>
                                 <comment>Controls</comment>
-                                <event-block collapsed="1" sid="8072154028364647">
+                                <event-block sid="8072154028364647">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="9553462149493715" type="ui_cursor">
                                             <param id="0" name="Instance variable">ui_menu</param>
@@ -2149,11 +2149,11 @@
                                             <actions>
                                                 <action id="-3" name="Set position" sid="5738235921991766" type="ui_cursor">
                                                     <param id="0" name="X">ui_win0.X + 8</param>
-                                                    <param id="1" name="Y">ui_win0.Y + 16 + 16*ui_cursor.ui_index1</param>
+                                                    <param id="1" name="Y">ui_win0.Y + 12 + 16*ui_cursor.ui_index1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block collapsed="1" sid="1832144836313618">
+                                        <event-block sid="1832144836313618">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="1538207359867368" type="ui_win1">
                                                     <param id="0" name="Instance variable">ui_id</param>
@@ -2364,9 +2364,9 @@
                                                             <conditions />
                                                             <actions>
                                                                 <action id="-24" name="Move to top" sid="4385081793574746" type="ui_keyboard" />
-                                                                <action id="-3" name="Set position" sid="4581402883834999" type="ui_keyboard">
-                                                                    <param id="0" name="X">ui_win1.BBoxRight - ui_win1.Width/2</param>
-                                                                    <param id="1" name="Y">ui_win1.Y + (loopindex(&quot;keymap&quot;) - 10)*16 + 16</param>
+                                                                <action id="-3" name="Set position" sid="8624997479599153" type="ui_keyboard">
+                                                                    <param id="0" name="X">ui_win1.X + 32</param>
+                                                                    <param id="1" name="Y">ui_win1.Y + (loopindex(&quot;keymap&quot;) - 10)*16 + 12</param>
                                                                 </action>
                                                                 <action id="-15" name="Set visible" sid="7784626796355365" type="ui_keyboard">
                                                                     <param id="0" name="Visibility">1</param>
@@ -2820,7 +2820,7 @@
                                             </sub-events>
                                         </event-block>
                                         <comment>Precision Control</comment>
-                                        <event-block sid="189501989938843">
+                                        <event-block collapsed="1" sid="189501989938843">
                                             <conditions>
                                                 <condition id="-14" name="Compare variable" sid="921090332166466" type="System">
                                                     <param id="0" name="Variable">CONTROL_ALT</param>
