@@ -7196,7 +7196,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="sys">
+        <object-folder expanded="0" name="sys">
             <object-folder expanded="1" name="db">
                 <object-type global="1" name="g_dialog" sid="69">
                     <plugin id="Arr" />
@@ -7264,7 +7264,7 @@
             </object-type>
         </object-folder>
         <object-folder expanded="0" name="env">
-            <object-folder expanded="1" name="e_des">
+            <object-folder expanded="0" name="e_des">
                 <object-type name="e_des_g0" sid="89">
                     <plugin id="TiledBg" />
                     <texture />
@@ -7494,6 +7494,14 @@
                         <collision-poly>
                             <point x="1" y="0" />
                             <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </tile>
+                    <tile id="2">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0" />
+                            <point x="0.5" y="1" />
                             <point x="0" y="1" />
                         </collision-poly>
                     </tile>
@@ -9247,11 +9255,26 @@
                 <plugin id="TiledBg" />
                 <texture />
             </object-type>
-            <object-type name="ui_title" sid="5242979083172937">
+            <object-type name="ui_title0" sid="5242979083172937">
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9922882631227832" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ui_title1" sid="8536331614143599">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4712707827201609" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="0.96875" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -11032,13 +11055,13 @@
             </members>
         </family>
     </families>
-    <layout-folder expanded="0">
+    <layout-folder expanded="1">
         <layout-folder expanded="0" name="debug">
             <layout>template.xml</layout>
             <layout>debug.xml</layout>
             <layout>demo_end.xml</layout>
         </layout-folder>
-        <layout-folder expanded="0" name="intro">
+        <layout-folder expanded="1" name="intro">
             <layout>intro_sequence1.xml</layout>
             <layout>intro_sequence2.xml</layout>
             <layout>intro_0.xml</layout>
@@ -11056,8 +11079,8 @@
         <layout>title.xml</layout>
         <layout>worldmap.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
-        <event-folder expanded="1" name="intro">
+    <event-folder expanded="0">
+        <event-folder expanded="0" name="intro">
             <event-sheet>intro_6.xml</event-sheet>
             <event-sheet>intro_2.xml</event-sheet>
             <event-sheet>intro_0.xml</event-sheet>

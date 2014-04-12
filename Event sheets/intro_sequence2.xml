@@ -32,6 +32,9 @@
                 <condition id="-4" name="Trigger once while true" sid="5466691286760534" type="System" />
             </conditions>
             <actions>
+                <action id="-16" name="Set opacity" sid="8619383101787488" type="ui_title1">
+                    <param id="0" name="Opacity">0</param>
+                </action>
                 <action id="7" name="Play (by name)" sid="2341483709926486" type="g_audio">
                     <param id="0" name="Folder">0</param>
                     <param id="1" name="Audio file name">&quot;mus_introtheme&quot;</param>
@@ -214,7 +217,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block collapsed="1" sid="945577279104358">
+                        <event-block sid="945577279104358">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="4042687698419273" type="ui_font1">
                                     <param id="0" name="Instance variable">ui_fade</param>
@@ -302,7 +305,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <comment>REVAHLEN</comment>
+                                        <comment>A Godstone Tale</comment>
                                         <event-block sid="7641958415272993">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="1188892297016801" type="ui_font1">
@@ -313,20 +316,38 @@
                                             </conditions>
                                             <actions>
                                                 <action id="2" name="Set scale" sid="6389428196009492" type="ui_font1">
-                                                    <param id="0" name="Scale">2.0</param>
+                                                    <param id="0" name="Scale">1.0</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="3694308141423146" type="ui_font1">
-                                                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 2)</param>
+                                                    <param id="0" name="Text">g_dialog.At(g_gamedata.At(0,0,6), 0, 1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>REVAHLEN</comment>
+                                        <event-block sid="357013683355833">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="2426838121430651" type="ui_font1">
+                                                    <param id="0" name="Instance variable">ui_var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="2" name="Set scale" sid="9691254179869905" type="ui_font1">
+                                                    <param id="0" name="Scale">2.0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="7435545934973265" type="ui_font1">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                         <comment>Tim McCabe</comment>
                                         <event-block sid="7638220351050922">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="2426838121430651" type="ui_font1">
+                                                <condition id="-7" name="Compare instance variable" sid="6551165440584228" type="ui_font1">
                                                     <param id="0" name="Instance variable">ui_var</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">3</param>
+                                                    <param id="2" name="Value">4</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -341,10 +362,10 @@
                                         <comment>Tom Surrette</comment>
                                         <event-block sid="1074079743360548">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="6551165440584228" type="ui_font1">
+                                                <condition id="-7" name="Compare instance variable" sid="7384644721616395" type="ui_font1">
                                                     <param id="0" name="Instance variable">ui_var</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">4</param>
+                                                    <param id="2" name="Value">5</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -359,10 +380,10 @@
                                         <comment>Chris Thompsen</comment>
                                         <event-block sid="8801035566793563">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="7384644721616395" type="ui_font1">
+                                                <condition id="-7" name="Compare instance variable" sid="5207526840498674" type="ui_font1">
                                                     <param id="0" name="Instance variable">ui_var</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">5</param>
+                                                    <param id="2" name="Value">6</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -376,10 +397,10 @@
                                         </event-block>
                                         <event-block sid="3312412306339014">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="5207526840498674" type="ui_font1">
+                                                <condition id="-7" name="Compare instance variable" sid="705208123794109" type="ui_font1">
                                                     <param id="0" name="Instance variable">ui_var</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">6</param>
+                                                    <param id="2" name="Value">7</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -394,6 +415,20 @@
                                     </sub-events>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="734905378437445">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9598091151946078" type="ui_font1">
+                                    <param id="0" name="Instance variable">ui_var</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="3815470181938041" type="ui_title1">
+                                    <param id="0" name="Opacity">ui_font1.Opacity</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

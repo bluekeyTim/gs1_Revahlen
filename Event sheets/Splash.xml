@@ -148,17 +148,17 @@
                 </event-block>
                 <event-block sid="2363498942006012">
                     <conditions>
-                        <condition id="3" name="Compare frame" sid="3083216524032986" type="ui_title">
+                        <condition id="3" name="Compare frame" sid="3083216524032986" type="ui_title0">
                             <param id="0" name="Comparison">0</param>
                             <param id="1" name="Number">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Set position" sid="8463856616416227" type="ui_title">
+                        <action id="-3" name="Set position" sid="8463856616416227" type="ui_title0">
                             <param id="0" name="X">ViewportRight(&quot;bg&quot;)/2</param>
                             <param id="1" name="Y">ViewportBottom(&quot;bg&quot;)/3 + 16</param>
                         </action>
-                        <action id="-16" name="Set opacity" sid="5811606614418449" type="ui_title">
+                        <action id="-16" name="Set opacity" sid="5811606614418449" type="ui_title0">
                             <param id="0" name="Opacity">0</param>
                         </action>
                     </actions>
@@ -412,18 +412,18 @@
             <sub-events>
                 <event-block sid="3435901927051445">
                     <conditions>
-                        <condition id="3" name="Compare frame" sid="3123345394941399" type="ui_title">
+                        <condition id="3" name="Compare frame" sid="3123345394941399" type="ui_title0">
                             <param id="0" name="Comparison">0</param>
                             <param id="1" name="Number">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-16" name="Set opacity" sid="7787737575676695" type="ui_title">
-                            <param id="0" name="Opacity">ui_title.Opacity + 50*dt</param>
+                        <action id="-16" name="Set opacity" sid="7787737575676695" type="ui_title0">
+                            <param id="0" name="Opacity">ui_title0.Opacity + 50*dt</param>
                         </action>
-                        <action id="-3" name="Set position" sid="2972283081181501" type="ui_title">
+                        <action id="-3" name="Set position" sid="2972283081181501" type="ui_title0">
                             <param id="0" name="X">ViewportRight(&quot;bg&quot;)/2</param>
-                            <param id="1" name="Y">max(ui_title.Y - 8*dt, ViewportBottom(&quot;bg&quot;)/3)</param>
+                            <param id="1" name="Y">max(ui_title0.Y - 8*dt, ViewportBottom(&quot;bg&quot;)/3)</param>
                         </action>
                     </actions>
                 </event-block>

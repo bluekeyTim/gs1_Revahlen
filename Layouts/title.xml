@@ -47,7 +47,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="ui_title" uid="54">
+                <instance type="ui_title0" uid="54">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
