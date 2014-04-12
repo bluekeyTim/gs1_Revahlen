@@ -16,14 +16,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <snap-width>16</snap-width>
     <snap-height>16</snap-height>
     <show-collision-polys>0</show-collision-polys>
-    <translucent-inactive-layers>0</translucent-inactive-layers>
+    <translucent-inactive-layers>1</translucent-inactive-layers>
     <properties>
         <property expanded="1" name="Layout properties" />
         <property expanded="0" name="Layout Size" />
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="bg1" />
+    <active-layer name="fg" />
     <layers>
         <layer locked="0" name="bg0" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="bg1" parallax-in-editor="0" visible="1" />
