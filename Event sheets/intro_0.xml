@@ -11,9 +11,15 @@
             <actions>
                 <action id="4" name="Set at XYZ" sid="5834582487439579" type="g_gamedata">
                     <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Z">7</param>
+                    <param id="3" name="Value">2</param>
+                </action>
+                <action id="4" name="Set at XYZ" sid="1886418413959734" type="g_gamedata">
+                    <param id="0" name="X">0</param>
                     <param id="1" name="Y">2</param>
                     <param id="2" name="Z">1</param>
-                    <param id="3" name="Value">1</param>
+                    <param id="3" name="Value">2</param>
                 </action>
             </actions>
             <sub-events>

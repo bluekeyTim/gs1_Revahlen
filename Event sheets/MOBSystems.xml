@@ -214,21 +214,11 @@
                 <event-block sid="2166230572384244">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="2948153726547308" type="fx_proj0">
-                            <param id="0" name="Object">e_c_solid0</param>
+                            <param id="0" name="Object">e_c_solidtile</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="8550016361326914" type="fx_proj0" />
-                    </actions>
-                </event-block>
-                <event-block sid="7739962244843352">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="3606629370235809" type="fx_proj0">
-                            <param id="0" name="Object">e_c_solid1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="2048337514472704" type="fx_proj0" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -1649,7 +1639,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="764">
+                                <event-block collapsed="1" sid="764">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="765" type="c_mobbox">
                                             <param id="0" name="Instance variable">AItype</param>
@@ -1669,7 +1659,7 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <event-block collapsed="1" sid="767">
+                                                <event-block sid="767">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="768" type="c_mobbox">
                                                             <param id="0" name="Instance variable">state</param>

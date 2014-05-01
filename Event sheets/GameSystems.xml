@@ -5,6 +5,7 @@
     <events>
         <comment>Control Globals</comment>
         <variable constant="0" name="CONTROL_TYPE" sid="3247890701113225" static="0" type="number">0</variable>
+        <variable constant="0" name="CONTROL_JOY" sid="5620042439397074" static="0" type="number">0</variable>
         <variable constant="0" name="CONTROL_UP" sid="414" static="0" type="number">0</variable>
         <variable constant="0" name="CONTROL_DOWN" sid="415" static="0" type="number">0</variable>
         <variable constant="0" name="CONTROL_LEFT" sid="416" static="0" type="number">0</variable>
@@ -15,6 +16,8 @@
         <variable constant="0" name="CONTROL_RUNE" sid="421" static="0" type="number">0</variable>
         <variable constant="0" name="CONTROL_ALT" sid="422" static="0" type="number">0</variable>
         <variable constant="0" name="CONTROL_MENU" sid="423" static="0" type="number">0</variable>
+        <variable constant="0" name="TOUCH_START_X" sid="7321243662218073" static="0" type="number">0</variable>
+        <variable constant="0" name="TOUCH_START_Y" sid="2124559402128747" static="0" type="number">0</variable>
         <comment>Game State Globals</comment>
         <variable constant="0" name="FADE" sid="424" static="0" type="number">0</variable>
         <variable constant="0" name="PAUSE" sid="425" static="0" type="number">0</variable>
@@ -34,7 +37,7 @@
         <variable constant="0" name="WARP_MUSIC_CHANGE" sid="437" static="0" type="number">0</variable>
         <event-group collapsed="1" description="" sid="440" title="Controls">
             <sub-events>
-                <comment>CONTROL TYPE&#x0D;&#x0A;0 : Keyboard&#x0D;&#x0A;1 : Controller</comment>
+                <comment>CONTROL TYPE&#x0D;&#x0A;0 : Keyboard&#x0D;&#x0A;1 : Controller&#x0D;&#x0A;2 : Touch</comment>
                 <event-block sid="6058036212651206">
                     <conditions>
                         <condition id="1" name="On any key pressed" sid="5570829946237646" type="g_con_key" />
@@ -56,6 +59,25 @@
                         <action id="-9" name="Set value" sid="2366348491727252" type="System">
                             <param id="0" name="Variable">CONTROL_TYPE</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4038677764668136">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="8809201267932322" type="g_con_touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5440216631076208" type="System">
+                            <param id="0" name="Variable">CONTROL_TYPE</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4196897741522737" type="System">
+                            <param id="0" name="Variable">TOUCH_START_X</param>
+                            <param id="1" name="Value">g_con_touch.XAt(g_con_touch.TouchIndex)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4910935739710481" type="System">
+                            <param id="0" name="Variable">TOUCH_START_Y</param>
+                            <param id="1" name="Value">g_con_touch.YAt(g_con_touch.TouchIndex)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -567,6 +589,91 @@
                 </event-group>
                 <event-group collapsed="1" description="" sid="542" title="Gamepad">
                     <sub-events>
+                        <comment>If joystick used, disable Dpad. If Dpad used, disable joystick. This keeps the game from getting confused about ON/OFF states for directional controls.</comment>
+                        <event-block collapsed="1" sid="7872391223556894">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3545516227195699" type="System">
+                                    <param id="0" name="Variable">CONTROL_JOY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="5209023065840848">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="8163714600235759" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">10</param>
+                                        </condition>
+                                        <condition id="5" name="Compare axis" sid="6034564918329946" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">-10</param>
+                                        </condition>
+                                        <condition id="5" name="Compare axis" sid="1371371436109677" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">10</param>
+                                        </condition>
+                                        <condition id="5" name="Compare axis" sid="1127923961814387" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">-10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2360170417447811" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block collapsed="1" sid="1214448993736909">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9733355209245885" type="System">
+                                    <param id="0" name="Variable">CONTROL_JOY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="94511797538752">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="1479599205891889" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">12</param>
+                                        </condition>
+                                        <condition id="6" name="On button pressed" sid="3548638701669449" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">13</param>
+                                        </condition>
+                                        <condition id="6" name="On button pressed" sid="2255753114012234" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">14</param>
+                                        </condition>
+                                        <condition id="6" name="On button pressed" sid="1203968441780859" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="9432516369934931" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <comment>GAMEPAD CONTROLS&#x0D;&#x0A;Up                    Up&#x0D;&#x0A;Down                Down&#x0D;&#x0A;Left                   Left&#x0D;&#x0A;Right                 Right&#x0D;&#x0A;Attack               X&#x0D;&#x0A;Action               A&#x0D;&#x0A;Item                  Y&#x0D;&#x0A;Rune                 B&#x0D;&#x0A;Alt                    Trigger&#x0D;&#x0A;Menu                Pause&#x0D;&#x0A;&#x0D;&#x0A;Gamepad ON States</comment>
                         <event-block collapsed="1" sid="543">
                             <conditions>
@@ -584,9 +691,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">12</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="2654172669370018" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="547" type="System">
+                                            <param id="0" name="Variable">CONTROL_UP</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="352895366250794">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="4218331816543413" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">-25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="7252430328847744" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2118964085580341" type="System">
                                             <param id="0" name="Variable">CONTROL_UP</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -610,9 +743,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">13</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="8779390823594496" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="552" type="System">
+                                            <param id="0" name="Variable">CONTROL_DOWN</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3642409299935539">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="2602112615187188" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="3741355108776133" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="5858028642830563" type="System">
                                             <param id="0" name="Variable">CONTROL_DOWN</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -636,9 +795,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">14</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="2584527666491034" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="557" type="System">
+                                            <param id="0" name="Variable">CONTROL_LEFT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4670365061373656">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="6518052492164346" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">-25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="6694714439403813" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="4383343006219235" type="System">
                                             <param id="0" name="Variable">CONTROL_LEFT</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -662,9 +847,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">15</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="9089613244986846" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="562" type="System">
+                                            <param id="0" name="Variable">CONTROL_RIGHT</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9581954207302121">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="1651784786197288" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="9096175442465604" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="4177535638832858" type="System">
                                             <param id="0" name="Variable">CONTROL_RIGHT</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
@@ -849,9 +1060,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">12</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="681153536311841" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="598" type="System">
+                                            <param id="0" name="Variable">CONTROL_UP</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2376874371637345">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="5343962342388483" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">-25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="28145802560961" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="3473198417673013" type="System">
                                             <param id="0" name="Variable">CONTROL_UP</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -875,9 +1112,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">13</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="8512299039924523" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="603" type="System">
+                                            <param id="0" name="Variable">CONTROL_DOWN</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9995240391349392">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="987147342307988" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">1</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="3996886943524945" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8564883394712723" type="System">
                                             <param id="0" name="Variable">CONTROL_DOWN</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -901,9 +1164,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">14</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="4637419333941429" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="608" type="System">
+                                            <param id="0" name="Variable">CONTROL_LEFT</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4378743982023828">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="8332191225501757" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">-25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="4999954592457625" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8842842524842002" type="System">
                                             <param id="0" name="Variable">CONTROL_LEFT</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -927,9 +1216,35 @@
                                             <param id="0" name="Gamepad">0</param>
                                             <param id="1" name="Button">15</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="705104145948678" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-9" name="Set value" sid="613" type="System">
+                                            <param id="0" name="Variable">CONTROL_RIGHT</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8338284541821419">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="9345309949978912" type="g_con_gpad">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">25</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="9008109430829197" type="System">
+                                            <param id="0" name="Variable">CONTROL_JOY</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="6638698728159395" type="System">
                                             <param id="0" name="Variable">CONTROL_RIGHT</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -1114,6 +1429,804 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group collapsed="1" description="" sid="9290114967583894" title="Touch">
+                    <sub-events>
+                        <event-block sid="7134027769487843">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6082044397598921" type="System">
+                                    <param id="0" name="Variable">CONTROL_TYPE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3148171978074188">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3392682296135843" type="System">
+                                            <param id="0" name="Variable">PAUSE</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="2788816895718442" type="System">
+                                            <param id="0" name="Variable">HUD_STATE</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="2125683211067486" type="c_mobbox">
+                                            <param id="0" name="Instance variable">AItype</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;player&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="1683504052403368" type="c_mobbox">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;scripted&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="2088275029920539" type="UI_touch">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="9740252463066673">
+                                            <conditions>
+                                                <condition id="-9" name="Is visible" sid="2640976602285992" type="UI_touch" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>Touch Control Feedback</comment>
+                                                <event-block collapsed="1" sid="6481879105582863">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="9618950376686745" type="System">
+                                                            <param id="0" name="Object">UI_touch</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="3856007763261215">
+                                                            <conditions>
+                                                                <condition id="4" name="Is touching object" sid="4158783738866398" type="g_con_touch">
+                                                                    <param id="0" name="Object">UI_touch</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="4093306313207274" type="UI_touch">
+                                                                    <param id="0" name="Instance variable">ui_state</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="6380309554759923">
+                                                            <conditions>
+                                                                <condition id="-22" name="Else" sid="3941530205737573" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="7468293341615782" type="UI_touch">
+                                                                    <param id="0" name="Instance variable">ui_state</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="1714327942911934">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="5204360818814066" type="UI_touch">
+                                                            <param id="0" name="Instance variable">ui_state</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="9376523567529806">
+                                                            <conditions>
+                                                                <condition id="2" name="Is playing" sid="5721447167651905" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;dpad_on&quot;</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="203257644503399" type="UI_touch">
+                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">8</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="9255662272626019" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;dpad_off&quot;</param>
+                                                                    <param id="1" name="From">0</param>
+                                                                </action>
+                                                                <action id="5" name="Set frame" sid="9554388277534441" type="UI_touch">
+                                                                    <param id="0" name="Frame number">UI_touch.ui_id</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="8924630400531272">
+                                                            <conditions>
+                                                                <condition id="2" name="Is playing" sid="5689907910227539" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;button_on&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="2531504765424038" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;button_off&quot;</param>
+                                                                    <param id="1" name="From">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="5275299217981958">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="5945919108700288" type="UI_touch">
+                                                            <param id="0" name="Instance variable">ui_state</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="8227298615942321">
+                                                            <conditions>
+                                                                <condition id="2" name="Is playing" sid="160766040622558" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;dpad_off&quot;</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="9170171491642944" type="UI_touch">
+                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">8</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="6917271875151191" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;dpad_on&quot;</param>
+                                                                    <param id="1" name="From">0</param>
+                                                                </action>
+                                                                <action id="5" name="Set frame" sid="2872149075235136" type="UI_touch">
+                                                                    <param id="0" name="Frame number">UI_touch.ui_id</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="9094891414146654">
+                                                            <conditions>
+                                                                <condition id="2" name="Is playing" sid="1436543385631472" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;button_off&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="8342768787211428" type="UI_touch">
+                                                                    <param id="0" name="Animation">&quot;button_on&quot;</param>
+                                                                    <param id="1" name="From">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>Touch Dpad</comment>
+                                                <event-block collapsed="1" sid="3897296551640055">
+                                                    <conditions>
+                                                        <condition id="-11" name="For Each" sid="5355244964673385" type="System">
+                                                            <param id="0" name="Object">ui_touch_dpad</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="6277039936915862">
+                                                            <conditions>
+                                                                <condition id="4" name="Is touching object" sid="8840342266553531" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_dpad</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <comment>Touch Dpad ON States</comment>
+                                                                <event-block collapsed="1" sid="6993876219840608">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="7631564456487082" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_UP</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block any="1" sid="7518862154914136">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="109263895444447" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">0</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="6930410182553966" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">4</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="8330959471419378" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">5</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="5463142532731294" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_UP</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                                <event-block collapsed="1" sid="7880282503157161">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="5162839157081798" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_DOWN</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block any="1" sid="8370245350672871">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="5749408173697751" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">1</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="3111623787687131" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">6</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="3037019304714646" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">7</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="9600368222722598" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_DOWN</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                                <event-block collapsed="1" sid="2690643627036207">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="258321642753815" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_LEFT</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block any="1" sid="5232877043113771">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="5414997876938204" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">2</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="5956499454208217" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">4</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="886350515074924" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">7</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="7105507892416432" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_LEFT</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                                <event-block collapsed="1" sid="1796656459069311">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="5939274724486918" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_RIGHT</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block any="1" sid="7995787297753044">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="4449676685970129" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">3</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="2507425913483553" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">5</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="3815433641915095" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">6</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="829017460204492" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_RIGHT</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                                <comment>Touch Dpad OFF States</comment>
+                                                                <event-block collapsed="1" sid="5984950772943803">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="985291921849849" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_UP</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="1999188284310537">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="7717877693705496" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">0</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="20911697575125" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">4</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="1424904509363517" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">5</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="6981213267682533" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_UP</param>
+                                                                                    <param id="1" name="Value">0</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                                <event-block collapsed="1" sid="8205340512148961">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="5505342462017207" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_DOWN</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="2372646081137916">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="8493582323168483" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">1</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="3578930693215943" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">6</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="2105526121485689" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">7</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="905940652110577" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_DOWN</param>
+                                                                                    <param id="1" name="Value">0</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                                <event-block collapsed="1" sid="3145732793851213">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="6461592154654466" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_LEFT</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="4892598661583471">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="7341844299685788" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">2</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="6384289014082663" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">4</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="8645863868767123" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">7</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="4018991063433624" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_LEFT</param>
+                                                                                    <param id="1" name="Value">0</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                                <event-block collapsed="1" sid="6901798256377675">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="8413264673259876" type="System">
+                                                                            <param id="0" name="Variable">CONTROL_RIGHT</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="4744374087012989">
+                                                                            <conditions>
+                                                                                <condition id="-7" name="Compare instance variable" sid="2309081339630666" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">3</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="4050325095138652" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">5</param>
+                                                                                </condition>
+                                                                                <condition id="-7" name="Compare instance variable" sid="8815464716683554" type="ui_touch_dpad">
+                                                                                    <param id="0" name="Instance variable">ui_id</param>
+                                                                                    <param id="1" name="Comparison">1</param>
+                                                                                    <param id="2" name="Value">6</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-9" name="Set value" sid="2367424270731528" type="System">
+                                                                                    <param id="0" name="Variable">CONTROL_RIGHT</param>
+                                                                                    <param id="1" name="Value">0</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="2569133653244341">
+                                                    <conditions>
+                                                        <condition id="4" inverted="1" name="Is touching object" sid="9957870569269486" type="g_con_touch">
+                                                            <param id="0" name="Object">ui_touch_dpad</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="2053492677382164" type="System">
+                                                            <param id="0" name="Variable">CONTROL_UP</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="9336507785170471" type="System">
+                                                            <param id="0" name="Variable">CONTROL_DOWN</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="3404250433234271" type="System">
+                                                            <param id="0" name="Variable">CONTROL_LEFT</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="7032883972728733" type="System">
+                                                            <param id="0" name="Variable">CONTROL_RIGHT</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>Touch ON States</comment>
+                                                <event-block collapsed="1" sid="1425293436334253">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="6349525861234369" type="System">
+                                                            <param id="0" name="Variable">CONTROL_ACTION</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="1433852513729954">
+                                                            <conditions>
+                                                                <condition id="3" name="On touched object" sid="3489386761040306" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_action</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="2315395594518222" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_ACTION</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="7375691963724102">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="2651744615177544" type="System">
+                                                            <param id="0" name="Variable">CONTROL_ATTACK</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="9319045627746136">
+                                                            <conditions>
+                                                                <condition id="3" name="On touched object" sid="2149980042092795" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_attack</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="8225583372837217" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_ATTACK</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="7115843129248438">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="8397217145609326" type="System">
+                                                            <param id="0" name="Variable">CONTROL_ITEM</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="592628059662551">
+                                                            <conditions>
+                                                                <condition id="3" name="On touched object" sid="4200089539473565" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_item</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="9974413703679953" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_ITEM</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="278317037617589">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="8334100440910491" type="System">
+                                                            <param id="0" name="Variable">CONTROL_RUNE</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="36175636951324">
+                                                            <conditions>
+                                                                <condition id="3" name="On touched object" sid="1067811206944383" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_rune</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="8960556681750548" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_RUNE</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="9863174183280423">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="5937038432593136" type="System">
+                                                            <param id="0" name="Variable">CONTROL_MENU</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="7988288186322305">
+                                                            <conditions>
+                                                                <condition id="3" name="On touched object" sid="9456681879188854" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_menu</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="3225211925742656" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_MENU</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>Touch OFF States</comment>
+                                                <event-block collapsed="1" sid="1264781655970391">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="1939975252412173" type="System">
+                                                            <param id="0" name="Variable">CONTROL_ACTION</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="1769676438710489">
+                                                            <conditions>
+                                                                <condition id="4" inverted="1" name="Is touching object" sid="3476314046241859" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_action</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="9162952911103574" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_ACTION</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="3647852908914825">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="5693280956177039" type="System">
+                                                            <param id="0" name="Variable">CONTROL_ATTACK</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="5121470173579231">
+                                                            <conditions>
+                                                                <condition id="4" inverted="1" name="Is touching object" sid="7753051280457233" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_attack</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="3873075305292376" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_ATTACK</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="7953906828080093">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="4831664029782851" type="System">
+                                                            <param id="0" name="Variable">CONTROL_ITEM</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="6291589666627615">
+                                                            <conditions>
+                                                                <condition id="4" inverted="1" name="Is touching object" sid="6110534043395652" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_item</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="1097208812334956" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_ITEM</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="8064218553881293">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="3886160560648949" type="System">
+                                                            <param id="0" name="Variable">CONTROL_RUNE</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="7237047202446267">
+                                                            <conditions>
+                                                                <condition id="4" inverted="1" name="Is touching object" sid="2012267550054252" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_rune</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="315436968365639" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_RUNE</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block collapsed="1" sid="125964007119445">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="515619990421727" type="System">
+                                                            <param id="0" name="Variable">CONTROL_MENU</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="9887265559772057">
+                                                            <conditions>
+                                                                <condition id="4" inverted="1" name="Is touching object" sid="860213054249115" type="g_con_touch">
+                                                                    <param id="0" name="Object">ui_touch_menu</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="6321754914154326" type="System">
+                                                                    <param id="0" name="Variable">CONTROL_MENU</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="1508548032059092">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="9529507572783731" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="3362975814319893" type="UI_touch">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="3635424426869697">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6509985219252941" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="5929176975542717" type="UI_touch">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -3018,7 +4131,7 @@
                                     <param id="0" name="Color">rgb(255, 255, 0)</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2577603336937066" type="ui_text">
-                                    <param id="0" name="Text">&quot;Debug Mode&quot; &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Quest Progress : &quot; &amp; g_gamedata.At(0,1,0) &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Message Var : &quot; &amp; ui_font0.ui_var &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Map : &quot; &amp; LayoutName &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Player State : &quot; &amp; c_mobbox.state &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Camera Position : &quot; &amp; g_magicam.GetX(g_magicam.GetActiveCamera) &amp; &quot; , &quot; &amp; g_magicam.GetY(g_magicam.GetActiveCamera) &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Camera Transition : &quot; &amp; g_magicam.MovementTransitionProgress(g_magicam.GetActiveCamera)</param>
+                                    <param id="0" name="Text">&quot;Debug Mode&quot; &amp;newline&amp;&#x0D;&#x0A;newline&amp;&#x0D;&#x0A;&quot;Quest Progress : &quot; &amp; g_gamedata.At(0,1,0) &amp;newline&amp;&#x0D;&#x0A;&quot;Map : &quot; &amp; LayoutName &amp;newline&amp;&#x0D;&#x0A;&quot;Scroll : &quot; &amp; scrollx &amp; &quot;, &quot; &amp; scrolly &amp;newline&amp;&#x0D;&#x0A;&quot;Touch : &quot; &amp; g_con_touch.X &amp; &quot;, &quot; &amp; g_con_touch.Y</param>
                                 </action>
                             </actions>
                         </event-block>

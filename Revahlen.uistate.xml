@@ -11,7 +11,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout active="1">startup</layout>
-        <layout>intro_2</layout>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -19,11 +18,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="0">
+    <families-expanded root="1">
         <family expanded="0" name="MOB" />
         <family expanded="0" name="ZSORT" />
         <family expanded="0" name="UI_1" />
-        <family expanded="0" name="UI_0" />
+        <family expanded="1" name="UI_0" />
         <family expanded="0" name="BG_1" />
         <family expanded="0" name="BG_0" />
         <family expanded="0" name="ATK" />
@@ -34,5 +33,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="UI_2" />
         <family expanded="0" name="UI_control" />
         <family expanded="0" name="SPELL" />
+        <family expanded="0" name="UI_touch" />
     </families-expanded>
 </c2uistate>

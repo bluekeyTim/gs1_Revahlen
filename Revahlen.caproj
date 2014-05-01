@@ -8,7 +8,7 @@
     <author-website></author-website>
     <app-id></app-id>
     <unique-id>23sps4borxlqr</unique-id>
-    <saved-with-version>16600</saved-with-version>
+    <saved-with-version>16800</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
@@ -32,6 +32,7 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
@@ -7263,7 +7264,7 @@
                 <plugin id="Touch" />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="env">
+        <object-folder expanded="1" name="env">
             <object-folder expanded="0" name="e_des">
                 <object-type name="e_des_g0" sid="89">
                     <plugin id="TiledBg" />
@@ -7668,34 +7669,27 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type global="1" name="ui_arrows" sid="159">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="ui_id" sid="160" type="number" />
-                </instance-variables>
-                <animation-folder expanded="1">
-                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="161" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
             <object-type global="1" name="ui_map" sid="171">
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172" speed="0">
+                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="0" x="0.325" y="0.352273" />
-                            <image-point name="1" x="0.2" y="0.505682" />
-                            <image-point name="2" x="0.3" y="0.670455" />
-                            <image-point name="3" x="0.35" y="0.539773" />
-                            <image-point name="4" x="0.554167" y="0.573864" />
-                            <image-point name="5" x="0.566667" y="0.409091" />
-                            <image-point name="6" x="0.770833" y="0.482955" />
-                            <image-point name="7" x="0.7625" y="0.75" />
+                            <image-point name="0" x="0.6" y="0.232955" />
+                            <image-point name="1" x="0.470833" y="0.443182" />
+                            <image-point name="2" x="0.270833" y="0.579545" />
+                            <image-point name="3" x="0.3" y="0.801136" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="4" x="0.2875" y="0.142045" />
+                            <image-point name="5" x="0.133333" y="0.215909" />
+                            <image-point name="6" x="0.25" y="0.602273" />
+                            <image-point name="7" x="0.404167" y="0.221591" />
+                            <image-point name="8" x="0.583333" y="0.346591" />
+                            <image-point name="9" x="0.675" y="0.596591" />
+                            <image-point name="10" x="0.0875" y="0.676136" />
+                            <image-point name="11" x="0.404167" y="0.5625" />
+                            <image-point name="12" x="0.8875" y="0.767045" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -7739,7 +7733,11 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="4" loop="0" name="arrow" pingpong="0" repeatcount="1" repeatto="0" sid="2870699991738766" speed="0">
+                    <animation framecount="8" loop="0" name="arrow" pingpong="0" repeatcount="1" repeatto="0" sid="2870699991738766" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -9108,6 +9106,27 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
+                    <animation framecount="12" loop="0" name="touch" pingpong="0" repeatcount="0" repeatto="0" sid="6099103797800413" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type global="1" name="ui_font0" sid="3831463186043527">
@@ -9277,6 +9296,140 @@
                         </frame>
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type global="1" name="ui_button" sid="769463985560005">
+                <plugin id="TiledBg" />
+                <instance-variables>
+                    <instance-variable name="ui_id" sid="746032972747877" type="number" />
+                    <instance-variable name="ui_active" sid="8259666477535825" type="number" />
+                </instance-variables>
+                <texture />
+            </object-type>
+            <object-type global="1" name="ui_touch_dpad" sid="8775522449551565">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="8725581201254934">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="9" loop="0" name="dpad_off" pingpong="0" repeatcount="1" repeatto="0" sid="6349167337004375" speed="0">
+                        <frame duration="0" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="8" loop="0" name="dpad_on" pingpong="0" repeatcount="1" repeatto="0" sid="7963463348633858" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="button_off" pingpong="0" repeatcount="1" repeatto="0" sid="5578978520193438" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="button_on" pingpong="0" repeatcount="1" repeatto="0" sid="8218200706133143" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="ui_touch_action" sid="7538630180011641">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="3631575044785465">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="button_off" pingpong="0" repeatcount="1" repeatto="0" sid="6078706332045076" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="button_on" pingpong="0" repeatcount="1" repeatto="0" sid="842593220112681" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="ui_touch_attack" sid="62751987578127">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="5608944460830302">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="button_off" pingpong="0" repeatcount="1" repeatto="0" sid="1804318813681396" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="button_on" pingpong="0" repeatcount="1" repeatto="0" sid="423648953322469" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="ui_touch_menu" sid="3675477095230699">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="1388765235662075">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="button_off" pingpong="0" repeatcount="1" repeatto="0" sid="8468740519013191" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="button_on" pingpong="0" repeatcount="1" repeatto="0" sid="6932838372849857" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="ui_touch_item" sid="4297643795885503">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="3806873954248297">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="button_off" pingpong="0" repeatcount="1" repeatto="0" sid="8871570955942515" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="button_on" pingpong="0" repeatcount="1" repeatto="0" sid="423685868002239" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="ui_touch_rune" sid="2368866112792294">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="7265774333581735">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="button_off" pingpong="0" repeatcount="1" repeatto="0" sid="3601626368530667" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="button_on" pingpong="0" repeatcount="1" repeatto="0" sid="9082656824990276" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="ui_volume" sid="6629367230137289">
+                <plugin id="TiledBg" />
+                <instance-variables>
+                    <instance-variable name="ui_id" sid="9680197639235801" type="number" />
+                </instance-variables>
+                <texture />
             </object-type>
         </object-folder>
         <object-folder expanded="0" name="obj">
@@ -10893,7 +11046,6 @@
         </family>
         <family name="UI_1" plugin-id="Sprite" sid="212">
             <members>
-                <member>ui_arrows</member>
                 <member>ui_char</member>
                 <member>ui_cursor</member>
                 <member>ui_item</member>
@@ -10908,9 +11060,11 @@
         <family name="UI_0" plugin-id="TiledBg" sid="213">
             <members>
                 <member>ui_blk</member>
+                <member>ui_button</member>
                 <member>ui_equipLV0</member>
                 <member>ui_equipLV1</member>
                 <member>ui_h_rc</member>
+                <member>ui_volume</member>
             </members>
             <behaviors>
                 <behavior-type name="NoSave" sid="2418">
@@ -11054,14 +11208,28 @@
                 <member>fx_spell_wind0</member>
             </members>
         </family>
+        <family name="UI_touch" plugin-id="Sprite" sid="4712987359062224">
+            <members>
+                <member>ui_touch_action</member>
+                <member>ui_touch_attack</member>
+                <member>ui_touch_dpad</member>
+                <member>ui_touch_item</member>
+                <member>ui_touch_menu</member>
+                <member>ui_touch_rune</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ui_id" sid="7170021889068402" type="number" />
+                <instance-variable name="ui_state" sid="5621769899444879" type="number" />
+            </instance-variables>
+        </family>
     </families>
-    <layout-folder expanded="1">
+    <layout-folder expanded="0">
         <layout-folder expanded="0" name="debug">
             <layout>template.xml</layout>
             <layout>debug.xml</layout>
             <layout>demo_end.xml</layout>
         </layout-folder>
-        <layout-folder expanded="1" name="intro">
+        <layout-folder expanded="0" name="intro">
             <layout>intro_sequence1.xml</layout>
             <layout>intro_sequence2.xml</layout>
             <layout>intro_0.xml</layout>
@@ -11079,7 +11247,7 @@
         <layout>title.xml</layout>
         <layout>worldmap.xml</layout>
     </layout-folder>
-    <event-folder expanded="0">
+    <event-folder expanded="1">
         <event-folder expanded="0" name="intro">
             <event-sheet>intro_6.xml</event-sheet>
             <event-sheet>intro_2.xml</event-sheet>
