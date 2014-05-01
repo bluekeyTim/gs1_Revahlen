@@ -14,7 +14,7 @@ Z:
 4 : playtime		(int)	//in seconds
 5 : RC			(int)
 6 : language		(int)	//0=english
-7 : map index		(int)	//0=unknown,1=North Sarhajos,2=South Sarhajos
+7 : map index		(int)	//0=unknown,1=World,2=North Sarhajos,3=South Sarhajos
 8 : location ID		(int)	//see Map Locations below for IDs
 9 : active quest ID	(int)
 

@@ -9,6 +9,47 @@ X : Quest ID
 
 Only the latest entry is visible, unless the quest is complete. The final entry should
 read "endquest" so that the journal entry can be removed.
+
+Data Tokens are as follows: ["A|B|C|D"]
+A: Journal entry
+B: Country Location ID
+C: Country Map Animation Frame
+D: Quest Target Location IDs, tokenized with ;
+
+Location IDs
+ 0: Cildor
+ 1: Beladhama
+ 2: Sarhajos North
+ 3: Sarhajos South
+
+//Sarhajos North
+ 4: Graystone
+ 5: Dry Docks
+ 6: North Station
+ 7: North Rallian Caves
+ 8: Rallian Pass
+ 9: Naja Mha'neyr
+10: Coastal Cave
+11: Camp
+12: Thief Camp
+
+//Sarhajos South
+13: South Station
+14: Eanfara
+15: Kearner's Trail
+16: Kavanagh Mine
+17: Culamora Pass
+18: Culamora Caves
+19: Outlaw Valley
+20: Feall
+21: The Burning Hairs
+22: Ormond Ranch
+23: Abandoned Test Site
+24: Cave 1
+25: Cave 2
+26: Ruins
+
+
 ____________________________________________________________________________
 MAIN QUEST LINE
 
